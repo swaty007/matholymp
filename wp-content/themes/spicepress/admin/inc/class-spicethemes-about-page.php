@@ -134,13 +134,13 @@ if (!class_exists('SpiceThemes_About_Page')) {
 
 		public function welcome_admin_notice() {
 			?>
-			<div class="updated notice is-dismissible spicepress-notice">
+			<div class="updated notice is-dismissible notice-success notice-alt">
 				<h1><?php
-				$theme_info = wp_get_theme();
-				printf( esc_html__('Welcome to %1$s - Version %2$s', 'spicepress'), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
+				//$theme_info = wp_get_theme();
+				//printf( esc_html__('Welcome to %1$s - Version %2$s', 'spicepress'), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
 				</h1>
-				<p><?php echo sprintf( esc_html__("Welcome! Thank you for choosing SpiceThemes SpicePress WordPress theme. To take full advantage of the features this theme has to offer visit our %swelcome page%s.", "spicepress"), '<a href="' . esc_url( admin_url( 'themes.php?page=spicepress-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=spicepress-welcome' ) ); ?>" class="button button-blue-secondary button_spicepress" style="text-decoration: none;"><?php esc_html_e('Get started with SpicePress','spicepress'); ?></a></p>
+				<p><?php echo sprintf( esc_html__("Welcome! Thank you for choosing SpicePress WordPress theme. To take full advantage of the features this theme has to offer visit our %swelcome page%s.", "spicepress"), '<a href="' . esc_url( admin_url( 'themes.php?page=spicepress-welcome' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=spicepress-welcome' ) ); ?>" class="button button-primary" style="text-decoration: none;"><?php esc_html_e('Get started with SpicePress','spicepress'); ?></a></p>
 			</div>
 			<?php
 		}

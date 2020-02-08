@@ -95,7 +95,7 @@ class Spicepress_Customizer_Notify {
 	public function spicepress_customizer_notify_scripts_for_customizer() {
 
 		wp_enqueue_style( 'spicepress-customizer-notify-css', ST_TEMPLATE_DIR_URI . '/functions/customizer-notify/css/spicepress-customizer-notify.css', array());
-
+                wp_style_add_data( 'spicepress-customizer-notify-css', 'rtl', 'replace' );
 		wp_enqueue_style( 'plugin-install' );
 		wp_enqueue_script( 'plugin-install' );
 		wp_add_inline_script( 'plugin-install', 'var pagenow = "customizer";' );

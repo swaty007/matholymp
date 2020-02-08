@@ -264,14 +264,14 @@ $menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
 	.navbar .navbar-nav > .active > a, 
 	.navbar .navbar-nav > .active > a:hover, 
 	.navbar .navbar-nav > .active > a:focus {
-		color: #ce1b28;
+		color: #0060ff;
 		background-color: transparent;
 	}
 	.navbar .navbar-nav > .open > a,
 	.navbar .navbar-nav > .open > a:hover,
 	.navbar .navbar-nav > .open > a:focus { 
 		background-color: transparent; 
-		color: #ce1b28; 
+		color: #0060ff;
 		border-bottom: 1px dotted #4c4a5f; 
 	}
 }
@@ -439,8 +439,8 @@ $menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
 	}
 	
 	.navbar-custom .dropdown-menu { 
-		border-top: 2px solid #ce1b28 !important;
-		border-bottom: 2px solid #ce1b28 !important;
+		border-top: 2px solid #0060ff !important;
+		border-bottom: 2px solid #0060ff !important;
 		position: absolute !important; 
 		display: block; 
 		visibility: hidden; 
@@ -853,7 +853,7 @@ body.page-template-template-overlaped .header-overlapped {
 .navbar-center-fullwidth .navbar-nav > .active > a, 
 .navbar-center-fullwidth .navbar-nav > .active > a:hover, 
 .navbar-center-fullwidth .navbar-nav > .active > a:focus {
-    color: #ce1b28 !important;
+    color: #0060ff !important;
     background-color: transparent !important;
 }
 .navbar-center-fullwidth .navbar-nav li > a {

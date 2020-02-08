@@ -1,8 +1,17 @@
 == Changelog ==
+@Version 1.7
+* Added RTL language support.
+* Update option page.
+
+@Version 1.6.3.2
+1. Update Screenshot.
+
 @Version 1.5.9
 1. Added Menu breakpoint setting.
+
 @Version 1.5.8.1
-1. Added sanitize_callback function to add_setting
+1. Added sanitize_callback function to add_setting.
+
 @Version 1.5.8
 1. Added Header layout setting with logo placing.
 2. Fixed the translation issue of Home menu and search widget button text.

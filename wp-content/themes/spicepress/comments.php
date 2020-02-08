@@ -27,7 +27,7 @@ function spicepress_comments( $comment, $args, $depth ){
 	</a>
 	<div class="media-body">
 		<div class="comment-detail">
-			<h6 class="comment-detail-title"><?php esc_html(comment_author()); ?> <span class="comment-date"><?php esc_html_e('Posted on','spicepress'); ?><?php  echo esc_html(comment_time('g:i a')); ?><?php echo " - "; echo esc_html(comment_date('M j, Y'));?></span></h6>
+			<h6 class="comment-detail-title"><?php esc_html(comment_author()); ?> <span class="comment-date"><?php esc_html_e('Posted on','spicepress'); ?><?php  echo esc_html(comment_time()); ?><?php echo " - "; echo esc_html(comment_date());?></span></h6>
 			<p><?php comment_text(); ?></p>
 			
 			<?php edit_comment_link( esc_html__( 'Edit','spicepress' ), '<p class="edit-link">', '</p>' ); ?>

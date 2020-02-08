@@ -6,6 +6,7 @@ if( !function_exists('spicepress_scripts_function'))
 		// css
 		wp_enqueue_style('bootstrap', ST_TEMPLATE_DIR_URI . '/css/bootstrap.css');
 		wp_enqueue_style('spicepress-style', get_stylesheet_uri() );
+                wp_style_add_data( 'spicepress-style', 'rtl', 'replace' );
 		wp_enqueue_style('spicepress-default', ST_TEMPLATE_DIR_URI . '/css/default.css');
 		
 	    if( wp_is_mobile() ){
@@ -30,6 +31,7 @@ if( !function_exists('spicepress_scripts_function'))
 		
 		wp_enqueue_style('font-awesome', ST_TEMPLATE_DIR_URI . '/css/font-awesome/css/font-awesome.min.css');
 		wp_enqueue_style('spicepress-media-responsive-css', ST_TEMPLATE_DIR_URI . '/css/media-responsive.css');
+                wp_style_add_data( 'spicepress-media-responsive-css', 'rtl', 'replace' );
 		wp_enqueue_style('owl-carousel-css', ST_TEMPLATE_DIR_URI . '/css/owl.carousel.css');
 		
 		

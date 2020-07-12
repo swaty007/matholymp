@@ -27,7 +27,7 @@ if ( get_header_image() != '') {?>
 <?php
  $header_logo_placing = get_theme_mod('header_logo_placing', 'left');
 if($header_logo_placing == 'center'){ ?>
-<header class="desktop-header-center">
+<header class="desktop-header">
 <?php } ?>
 <!--Logo & Menu Section-->	
 <nav class="<?php if($header_logo_placing == 'center'){ echo 'navbar-center-fullwidth'; }?> navbar navbar-custom">
@@ -128,7 +128,7 @@ if($header_logo_placing == 'center'){ ?>
 
 
 <?php if($header_logo_placing == 'center'){ ?>
-<header class="mobile-header-center">
+<header class="mobile-header">
 
 <!--Logo & Menu Section-->	
 <nav class="navbar navbar-custom">

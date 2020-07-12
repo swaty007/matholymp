@@ -54,6 +54,7 @@ Thumbs.db
 !safari-pinned-tab.svg
 !nginx.conf
 !site.conf
+!siteNew.conf
 
 # track .editorconfig file (i.e. do NOT ignore it)
 !.editorconfig

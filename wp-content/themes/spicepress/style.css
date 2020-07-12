@@ -4,8 +4,8 @@ Theme URI: https://spicethemes.com/spicepress-wordpress-theme/
 Author: spicethemes.com
 Author URI: https://spicethemes.com
 Description: SpicePress is a responsive and fully customizable business template. It is a perfect solution for creative and corporate websites, restaurants, wedding planners, law firms, finance, consulting, travel, photography, recipes, design, sport/medical shops, startups, online agencies, portfolios, E-commerce (WooCommerce), and freelancers. The advanced admin panel will enable you to personalize SpicePress without any technical information. SpicePress is translation ready and supports popular plugins like WPML, Polylang, WooCommerce and Contact Form 7. Check out also SpicePress PRO, the premium version, which has a lot more to offer.
-Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, threaded-comments, translation-ready 
-Version: 1.5.8.1
+Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, threaded-comments, translation-ready, rtl-language-support 
+Version: 1.7
 License URI: spicethemes.com
 License: GNU General Public License v3 or later
 Text Domain: spicepress 
@@ -1286,7 +1286,7 @@ a:hover, a:focus { text-decoration: none !important; }
 	padding: 30px 25px; 
 }
 .sidebar .section-header {
-    border-left: 5px solid #ffdb00;
+    border-left: 5px solid #0060ff;
 }
 .sidebar form.search-form label { padding: 0; }
 .sidebar .widget label { display: block; padding: 25px 25px 0; margin: 0; }
@@ -2256,7 +2256,7 @@ ul.product-categories ul { padding-top: 0 !important; padding-bottom: 0 !importa
 }
 .woocommerce-product-search input[type="submit"], 
 button[type="submit"] { 
-	background-color: #ffdb00; 
+	background-color: #0060ff;
 }
 
 /*===================================================================================*/
@@ -2666,3 +2666,8 @@ p.woocommerce-notice.woocommerce-thankyou-order-received { margin: 0 0 20px; fon
    text-align: center;
 }
 
+/* Woocommerce page layout CSS */
+
+.woocommerce .related{
+	clear:both;
+}

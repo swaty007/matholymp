@@ -2,8 +2,8 @@
 
 Contributors: SpicePress
 Requires at least: 4.5
-Tested up to: 5.0
-Stable tag: 1.5.8
+Tested up to: 5.3
+Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,9 +23,30 @@ SpicePress WordPress Theme, Copyright (C) 2018, SpiceThemes
 SpicePress is distributed under the terms of the GNU GPL
 
 == Changelog ==
+@Version 1.7
+* Added RTL language support.
+* Update option page.
+
+@Version 1.6.3.2
+* Update Screenshot.
+
+@Version 1.6.3.1
+* Change timezone and date format.
+
+@Version 1.6.3
+* Added core design pattern for admin_notices API.
+
+@Version 1.6.2
+* Update code in js file for mobile menu.
+
+@Version 1.6.1
+* Add missing textdomain.
+
+@Version 1.6
+* Add CSS for woocommerce page layout.
 
 @Version 0.1
-* Initial release
+* Initial release.
 
 == Credits ==
 

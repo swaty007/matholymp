@@ -30,9 +30,6 @@
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Contact Form Support','spicepress' ); ?></span>
 										<p><?php esc_html_e( 'This theme supports the Contact Form 7 plugin. Use it to build your contact form.','spicepress' ); ?></p>
 										</li>
-										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'RTL Language Support','spicepress' ); ?></span>
-										<p><?php esc_html_e( 'This theme has RTL language support. For languages that start from right to left like Arabic, Hebrew, etc.','spicepress' ); ?></p>
-										</li>
 										
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Mulitple Color Schemes','spicepress' ); ?></span>
 										<p><?php esc_html_e( 'Enjoy any of the 7 preset color schemes, or create your own, without adding any code.','spicepress' ); ?></p>
@@ -52,13 +49,13 @@
 										<p><?php esc_html_e( 'Show all your services in a single place.','spicepress' ); ?></p>
 										</li>
 										
-										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Testimonial / Review Section','spicepress' ); ?></span>
+										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Testimonial/Review Section','spicepress' ); ?></span>
 										<p><?php esc_html_e( 'Show user feedback on the Homepage.','spicepress' ); ?></p>
 										</li>
 										
 										
-										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Color and Typography Module','spicepress' ); ?></span>
-										<p><?php esc_html_e( 'It is a powerful module allows you to adjust the fonts and colors of the content without adding a single line of css code.','spicepress' ); ?></p>
+										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Typography Settings','spicepress' ); ?></span>
+										<p><?php esc_html_e( 'You can customize the style without adding any code.','spicepress' ); ?></p>
 										</li>
 										
 										
@@ -96,7 +93,6 @@
 										</li><li style="font-size:16px; line-height:25px; padding:43px"><?php esc_html_e("Wide Layout","spicepress"); ?> </li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
-										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
@@ -128,7 +124,6 @@
 										</li>
 										<li style="font-size:16px; line-height:25px; padding:18px"><?php esc_html_e("About, Services, Portfolio, Blog Left & Right Sidebars, Blog Full Width, Page Full Width, Contact Page and much more.","spicepress"); ?></li>
 										<li style="font-size:16px; line-height:25px; padding:43px"><?php esc_html_e("Wide layout & Boxed Layout","spicepress"); ?></li>
-										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>

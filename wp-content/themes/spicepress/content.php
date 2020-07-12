@@ -34,4 +34,6 @@
 						<?php the_content( __('Read More','spicepress') ); ?>
 						<?php wp_link_pages( ); ?>
 					</div>						
-				</article>
+<div class="share42init" data-url="<?php the_permalink() ?>" data-title="<?php the_title() ?>"></div>
+<script type="text/javascript" src="/wp-content/uploads/2017/11/share42.js"></script>				
+</article>

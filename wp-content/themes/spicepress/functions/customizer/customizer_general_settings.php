@@ -191,43 +191,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			);
 		}
 		
-		/* footer copyright section */
-	$wp_customize->add_section( 'spicepress_menu_breakpoint' , array(
-		'title'      => esc_html__('Menu breakpoint settings','spicepress'),
-		'panel'  => 'general_settings',
-   	) );
-	
-	
-	
-		$wp_customize->add_setting( 'menu_breakpoint', array(
-		  'capability' => 'edit_theme_options',
-		  'sanitize_callback' => 'spicepress_sanitize_number_absint',
-		  'default' => 1100,
-		) );
-
-		$wp_customize->add_control( 'menu_breakpoint', array(
-		  'type' => 'number',
-		  'section' => 'spicepress_menu_breakpoint', // Add a default or your own section
-		  'label' => __( 'Menu breakpoint', 'spicepress' ),
-		  'description' => __( 'Enter the Min. Size 200px and Max Size 6000px', 'spicepress' ),
-		) );
-
-		function spicepress_sanitize_number_absint( $number, $setting ) {
-		  // Ensure $number is an absolute integer (whole number, zero or greater).
-		  $number = absint( $number );
-		  
-		  if($number < 200 || $number > 6000){
-			  
-		  }else{
-			  
-			   // If the input is an absolute integer, return it; otherwise, return the default
-		       return ( $number ? $number : $setting->default );
-		  }
-
-		 
-		}
-		
-		
 	
 	/* Remove animation */
 	$wp_customize->add_section( 'remove_wow_animation_setting' , array(

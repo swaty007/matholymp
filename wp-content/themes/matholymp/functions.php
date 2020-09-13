@@ -51,7 +51,7 @@ HTML;
 }
 //add_filter('the_content', 'kama_content_advertise', -10); //верхушка
 
-add_filter( 'the_content', 'prefix_insert_post_ads' ); //низ контента
+//add_filter( 'the_content', 'prefix_insert_post_ads' ); //низ контента
 function prefix_insert_post_ads( $content ) {
 $ad_code = '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- adaptive_block mmm --><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7558972045892090" data-ad-slot="2772199621" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
 if ( is_single() && 0 == wp_get_current_user()->ID   ) {

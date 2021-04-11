@@ -97,3 +97,4 @@ wp-content/*
 # add your own entries here
 !wp-content/plugins/example-plugin/
 !wp-content/themes/*
+!369522c68285d81791602ea6e53eae42.html

@@ -48,7 +48,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php esc_url(bloginfo( 'pingback_url' )); ?>">
 	<?php endif; ?>
-
+    <meta name="369522c68285d81791602ea6e53eae42" content="">
 	<?php wp_head(); ?>
 </head>
 <?php

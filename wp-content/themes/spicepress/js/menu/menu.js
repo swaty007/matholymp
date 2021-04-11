@@ -9,22 +9,23 @@
         /* ---------------------------------------------- /*
          * Scroll top
          /* ---------------------------------------------- */
-	
-		jQuery(window).scroll(function() {
+    
+        jQuery(window).scroll(function() {
             if (jQuery(this).scrollTop() > 100) {
                 jQuery('.scroll-up').fadeIn();
             } else {
                 jQuery('.scroll-up').fadeOut();
             }
         });
-		
-		jQuery('.scroll-up').click(function () {
-			jQuery("html, body").animate({
-				scrollTop: 0
-			}, 700);
-			return false;
-		});
-		
+
+        
+        jQuery('.scroll-up').click(function () {
+            jQuery("html, body").animate({
+                scrollTop: 0
+            }, 700);
+            return false;
+        });
+    
 
         /* ---------------------------------------------- /*
          * Initialization General Scripts for all pages
@@ -40,23 +41,31 @@
         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             mobileTest = true;
         }
-
-        buildHomeSection(homeSection);
-        navbarAnimation(navbar, homeSection, navHeight);
-        navbarSubmenu(width);
-        hoverDropdown(width, mobileTest);
+        document.onload = my_function();
+        spicepress_buildHomeSection(homeSection);
+        spicepress_navbarAnimation(navbar, homeSection, navHeight);
+        spicepress_navbarSubmenu(width);
+        spicepress_hoverDropdown(width, mobileTest);
 
         jQuery(window).resize(function() {
             var width = Math.max(jQuery(window).width(), window.innerWidth);
-            buildHomeSection(homeSection);
-            hoverDropdown(width, mobileTest);
+            spicepress_buildHomeSection(homeSection);
+            spicepress_hoverDropdown(width, mobileTest);
         });
+
+        function my_function () {
+    jQuery('.dropdown-menu').parent().addClass('dropdown');
+    jQuery('li.dropdown').find('a:first').addClass('dropdown-toggle');
+//    jQuery('li.dropdown').find('a:first').after( "<button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='fa fa-angle-down'></i></button>" );
+    }
+
+
 
        /* ---------------------------------------------- /*
          * Home section height
          /* ---------------------------------------------- */
 
-        function buildHomeSection(homeSection) {
+        function spicepress_buildHomeSection(homeSection) {
             if (homeSection.length > 0) {
                 if (homeSection.hasClass('home-full-height')) {
                     homeSection.height(jQuery(window).height());
@@ -71,7 +80,7 @@
          * Transparent navbar animation
          /* ---------------------------------------------- */
 
-        function navbarAnimation(navbar, homeSection, navHeight) {
+        function spicepress_navbarAnimation(navbar, homeSection, navHeight) {
             var topScroll = jQuery(window).scrollTop();
             if (navbar.length > 0 && homeSection.length > 0) {
                 if(topScroll >= navHeight) {
@@ -81,12 +90,11 @@
                 }
             }
         }
-
         /* ---------------------------------------------- /*
          * Navbar submenu
          /* ---------------------------------------------- */
 
-        function navbarSubmenu(width) {
+        function spicepress_navbarSubmenu(width) {
             if (width > breakpoint_settings.menu_breakpoint) {
                 jQuery('.navbar-custom .navbar-nav > li.dropdown').hover(function() {
                     var MenuLeftOffset  = jQuery('.dropdown-menu', jQuery(this)).offset().left;
@@ -105,6 +113,24 @@
                         }
                     }
                 });
+
+                 jQuery('.navbar-custom .navbar-nav > li.dropdown a.dropdown-toggle').focus(function() {
+                    var MenuLeftOffsets  = jQuery('.dropdown-menu', jQuery(this).parent()).offset().left;
+                    var Menu1LevelWidth = jQuery('.dropdown-menu', jQuery(this).parent()).width();
+                    if (width - MenuLeftOffsets < Menu1LevelWidth * 2) {
+                        jQuery(this).parent().children('.dropdown-menu').addClass('leftauto');
+                    } else {
+                        jQuery(this).parent().children('.dropdown-menu').removeClass('leftauto');
+                    }
+                    if (jQuery('.dropdown', jQuery(this).parent()).length > 0) {
+                        var Menu2LevelWidth = jQuery('.dropdown-menu', jQuery(this).parent()).width();
+                        if (width - MenuLeftOffsets - Menu1LevelWidth < Menu2LevelWidth) {
+                            jQuery(this).parent().children('.dropdown-menu').addClass('left-side');
+                        } else {
+                            jQuery(this).parent().children('.dropdown-menu').removeClass('left-side');
+                        }
+                    }
+                });
             }
         }
 
@@ -112,7 +138,7 @@
          * Navbar hover dropdown on desctop
          /* ---------------------------------------------- */
 
-        function hoverDropdown(width, mobileTest) {
+        function spicepress_hoverDropdown(width, mobileTest) {
             if ((width > breakpoint_settings.menu_breakpoint) && (mobileTest !== true)) {
                 jQuery('.navbar-custom').removeClass('open');
                 var delay = 0;
@@ -152,56 +178,92 @@
         });
 
 
-		if( jQuery(window).width() > breakpoint_settings.menu_breakpoint) {
-		   jQuery('.nav li.dropdown').hover(function() {
-		    if( jQuery(window).width() > 1100) {
-		     	jQuery('.dropdown-menu').removeAttr("style");
-		      }
-			   jQuery(this).addClass('open');
+        if( jQuery(window).width() > breakpoint_settings.menu_breakpoint) {
+           jQuery('.nav li.dropdown').hover(function() {
+            if( jQuery(window).width() > 1100) {
+                jQuery('.dropdown-menu').removeAttr("style");
+              }
+               jQuery(this).addClass('open');
 
-		   }, function() {
-			   jQuery(this).removeClass('open');
-		   }); 
-		   jQuery('.nav li.dropdown-submenu').hover(function() {
-			   jQuery(this).addClass('open');
-		   }, function() {
-			   jQuery(this).removeClass('open');
-		   }); 
-		}
-		
-	  jQuery('li.dropdown').find('a').each(function (){
-          var link = jQuery(this).attr('href');
-              if (link==='' || link==="#") {
-                jQuery(this).on('click', function(){
-                if( jQuery(window).width() < 1100) {
-                	jQuery('li.dropdown,li.dropdown-submenu').removeClass('open');
-                    jQuery(this).next().slideToggle();
+           }, function() {
+               jQuery(this).removeClass('open');
+           }); 
+           jQuery('.nav li.dropdown-submenu').hover(function() {
+               jQuery(this).addClass('open');
+           }, function() {
+               jQuery(this).removeClass('open');
+           }); 
+        }
+        
+        
+        jQuery('li.dropdown').find('.fa-angle-down').each(function(){
+            jQuery(this).on('click', function(){
+                if( jQuery(window).width() < breakpoint_settings.menu_breakpoint) {
+                    jQuery(this).parent().next().slideToggle();
                 }
                 return false;
-                }); 
-              }
-    });
-		
-		jQuery('li.dropdown').find('.fa-angle-down').each(function(){
-			jQuery(this).on('click', function(){
-				if( jQuery(window).width() < breakpoint_settings.menu_breakpoint) {
-					jQuery(this).parent().next().slideToggle();
-				}
-				return false;
-			});
-		});
-		
-	if(jQuery(window).width() >= breakpoint_settings.menu_breakpoint){
-		//For header fix
-		jQuery(window).bind('scroll', function () {
-			if (jQuery(window).scrollTop() > 100) {
-				jQuery('.navigation').addClass('stiky-header');
-			} else {
-				jQuery('.navigation').removeClass('stiky-header');
-			}
-		});
-	
-	}
-	
+            });
+        });
+
+         /* ---------------------------------------------- /*
+         * Navbar focus dropdown on desktop
+         /* ---------------------------------------------- */
+        const topLevelLinks = Array.prototype.slice.call(document.querySelectorAll(".navbar-custom .navbar-nav > li.dropdown a.dropdown-toggle"), 0);
+          topLevelLinks.forEach(function(link){
+             return link.addEventListener('focus', function(e) {
+                this.parentElement.classList.add('open')
+                e.preventDefault();
+               
+                var div_list = e.target.parentElement.querySelectorAll( ".open" );
+                var div_array = Array.prototype.slice.call(div_list);
+                  div_array.forEach(function(e){
+                   return e.classList.remove( "open" ) 
+                });
+              })             
+
+            })
+
+            jQuery('li a').focus(function() { 
+              jQuery(this).parent().siblings().removeClass('open');
+              jQuery(this).parent().siblings().find(".open").removeClass('open');
+         });
+     
+            jQuery('a,input').bind('focus', function() {
+             if(!jQuery(this).closest(".menu-item").length ) {
+                topLevelLinks.forEach(function(link){
+                return link.parentElement.classList.remove('open')
+            })
+            }
+        })
+
+        if(jQuery(window).width() >= breakpoint_settings.menu_breakpoint){
+        //For header fix
+        jQuery(window).bind('scroll', function () {
+            if (jQuery(window).scrollTop() > 100) {
+                jQuery('.navbar-overlapped.navbar-custom').addClass('stiky-header');
+            } else {
+                jQuery('.navbar-overlapped.navbar-custom').removeClass('stiky-header');
+            }
+        });
+    
+    }    
+    
+    
+            jQuery('li.dropdown').find('.caret').each(function(){
+            jQuery(this).on('click', function(){
+                if( jQuery(window).width() <= breakpoint_settings.menu_breakpoint) {
+                  jQuery('li.dropdown,li.dropdown-submenu').removeClass('open');
+                  jQuery(this).parent().next().slideToggle();
+                }
+             return false;
+            });
+        });
+
+        jQuery('a,input').bind('focus', function() {
+            if(!jQuery(this).closest(".menu-item").length && ( jQuery(window).width() <= breakpoint_settings.menu_breakpoint) ) {
+               jQuery('.navbar-collapse').removeClass('in');
+            }
+        })
+    
     });
 })(jQuery);

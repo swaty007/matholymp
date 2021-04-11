@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: SpicePress\n"
-"POT-Creation-Date: 2019-11-19 13:18+0530\n"
+"POT-Creation-Date: 2021-03-25 19:24+0530\n"
 "PO-Revision-Date: 2019-04-09 11:22+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -21,19 +21,19 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:13
+#: 404.php:14
 msgid "Oops! Page not found"
 msgstr ""
 
-#: 404.php:14
+#: 404.php:15
 msgid "4"
 msgstr ""
 
-#: 404.php:15
+#: 404.php:16
 msgid "We are sorry, but the page you are looking for does not exist."
 msgstr ""
 
-#: 404.php:16
+#: 404.php:17
 msgid "Go Back"
 msgstr ""
 
@@ -67,88 +67,87 @@ msgstr ""
 msgid "Welcome to %1$s %2$s"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:142
+#: admin/inc/class-spicethemes-about-page.php:138
 #, php-format
 msgid ""
-"Welcome! Thank you for choosing SpicePress WordPress theme. To take full "
-"advantage of the features this theme has to offer visit our %swelcome page"
-"%s."
+"SpicePress theme is installed. To take full advantage of the features this "
+"theme has to offer visit our %1$s welcome page %2$s"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:143
-msgid "Get started with SpicePress"
+#: admin/inc/class-spicethemes-about-page.php:139
+msgid "Get started with SpicePress theme"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:257
+#: admin/inc/class-spicethemes-about-page.php:253
 msgid "See changelog below:"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:311
-#: admin/tab-pages/getting-started.php:26
+#: admin/inc/class-spicethemes-about-page.php:307
+#: admin/tab-pages/getting-started.php:23
 msgid "Getting Started"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:316
+#: admin/inc/class-spicethemes-about-page.php:312
 #: functions/customizer/customizer_recommended_plugin.php:16
 msgid "Recommended Actions"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:324
+#: admin/inc/class-spicethemes-about-page.php:320
 msgid "Support"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:331
+#: admin/inc/class-spicethemes-about-page.php:327
 #: admin/tab-pages/useful_plugins.php:28
 #: admin/tab-pages/useful_plugins.php:30
 msgid "Changelog"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:336
+#: admin/inc/class-spicethemes-about-page.php:332
 msgid "Free vs. PRO"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:417
+#: admin/inc/class-spicethemes-about-page.php:408
 #, php-format
 msgid "Install %s now"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:419
+#: admin/inc/class-spicethemes-about-page.php:410
 #: admin/inc/include-companion.php:81
 msgid "Install and activate"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:436
+#: admin/inc/class-spicethemes-about-page.php:427
 #, php-format
 msgid "Activate %s now"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:438
+#: admin/inc/class-spicethemes-about-page.php:429
 #: class-tgm-plugin-activation.php:2726
 #: functions/customizer/customizer_recommended_plugin.php:19
 msgid "Activate"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:441
+#: admin/inc/class-spicethemes-about-page.php:432
 #: class-tgm-plugin-activation.php:2321
 msgid "Active"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:563
+#: admin/inc/class-spicethemes-about-page.php:555
 #: admin/inc/include-companion.php:80 admin/inc/include-companion.php:97
 msgid "SpiceBox"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:565
+#: admin/inc/class-spicethemes-about-page.php:557
 msgid ""
 "To access the advance Frontpage sections and other theme features, please "
 "install the SpiceBox plugin."
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:569
+#: admin/inc/class-spicethemes-about-page.php:561 functions.php:212
 msgid "Contact Form 7"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:571
+#: admin/inc/class-spicethemes-about-page.php:563
 msgid ""
 "To display the contact form on the contact section in homepage, please "
 "install the Contact Form 7 plugin"
@@ -195,7 +194,7 @@ msgid "Page Templates Support"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:22
-msgid "SpicePress includes various page templates."
+msgid "Our theme includes various page templates."
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:24
@@ -204,174 +203,240 @@ msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:25
 msgid ""
-"SpicePress supports both a Full-Width and a Boxed layout options. To "
-"choose your preference (and switch between them) go to Appearance > "
-"Customize."
+"Our theme supports both a Full-Width and a Boxed layout options. To choose "
+"your preference, Go to Appearance >> Customize"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:27
-msgid "Mobile Friendly"
+msgid "Header Layouts"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:28
-msgid "Responsive layout in all devices"
-msgstr ""
-
-#: admin/tab-pages/free_vs_pro.php:30
-msgid "Contact Form Support"
+msgid "Show different header layouts with logo placing"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:31
-msgid ""
-"This theme supports the Contact Form 7 plugin. Use it to build your "
-"contact form."
+msgid "Sticky header"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:33
-msgid "RTL Language Support"
+msgid "Menu Breakpoint Setting"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:34
-msgid ""
-"This theme has RTL language support. For languages that start from right "
-"to left like Arabic, Hebrew, etc."
+#: admin/tab-pages/free_vs_pro.php:35
+msgid "Container Width Setting"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:37
-msgid "Mulitple Color Schemes"
+#: admin/tab-pages/free_vs_pro.php:36
+msgid "Set the width of the Content Container"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:38
-msgid ""
-"Enjoy any of the 7 preset color schemes, or create your own, without "
-"adding any code."
-msgstr ""
-
-#: admin/tab-pages/free_vs_pro.php:40
-msgid "Google Map"
+#: admin/tab-pages/free_vs_pro.php:39
+msgid "Post Navigation Style"
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:41
-msgid ""
-"Display your Shop and Business location on your website using Google Maps."
+msgid "Excerpt and Full Content"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:43
-msgid "Portfolio"
+#: admin/tab-pages/free_vs_pro.php:42
+msgid "Show the full content of post or excerpt on blog pages"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:44
-msgid ""
-"Present your project/portfolio collection with 2 column, 3 column and 4 "
-"column layouts. You can also display your project/portfolio by category."
+#: admin/tab-pages/free_vs_pro.php:45
+msgid "Colors and Typography Module"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:47
-msgid "About Us Page"
-msgstr ""
-
-#: admin/tab-pages/free_vs_pro.php:48
-msgid "Show team members and custom content added in the WordPress editor."
-msgstr ""
-
-#: admin/tab-pages/free_vs_pro.php:51
-msgid "Services Page"
-msgstr ""
-
-#: admin/tab-pages/free_vs_pro.php:52
-msgid "Show all your services in a single place."
-msgstr ""
-
-#: admin/tab-pages/free_vs_pro.php:55
-msgid "Testimonial / Review Section"
-msgstr ""
-
-#: admin/tab-pages/free_vs_pro.php:56
-msgid "Show user feedback on the Homepage."
-msgstr ""
-
-#: admin/tab-pages/free_vs_pro.php:60
-msgid "Color and Typography Module"
-msgstr ""
-
-#: admin/tab-pages/free_vs_pro.php:61
+#: admin/tab-pages/free_vs_pro.php:46
 msgid ""
 "It is a powerful module allows you to adjust the fonts and colors of the "
 "content without adding a single line of css code."
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:65
+#: admin/tab-pages/free_vs_pro.php:48
+msgid "Mulitple Color Schemes"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:49
+msgid ""
+"Enjoy any of the 7 preset color schemes, or create your own, without "
+"adding any code."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:51
+msgid "Google Map"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:52
+msgid ""
+"Display your Shop and Business location on your website using Google Maps."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:54
+msgid "Services Page"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:55
+msgid "Show all your services in a single place."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:57
+msgid "Portfolio"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:58
+msgid ""
+"Present your project/portfolio collection with 2 column, 3 column and 4 "
+"column layouts. You can also display your project/portfolio by category."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:60
+msgid "Testimonial / Review Section"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:61
+msgid "Show user feedback on the Homepage."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:63
+msgid "Theme Layout Manager"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:64
+msgid "Reorder the Homepage Sections by just drag and drop"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:67
+msgid "Footer Widget Layouts"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:68
+msgid "There are various layouts for the Footer Widgets"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:71
+msgid "Footer Credit"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:73
+msgid "Mobile Friendly"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:74
+msgid "Responsive layout in all devices"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:76
+msgid "Contact Form Support"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:77
+msgid ""
+"This theme supports the Contact Form 7 plugin. Use it to build your "
+"contact form."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:79
+msgid "RTL Language Support"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:80
+msgid ""
+"This theme has RTL language support. For languages that start from right "
+"to left like Arabic, Hebrew, etc."
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:82
 msgid "WPML Support"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:66
+#: admin/tab-pages/free_vs_pro.php:83
 msgid "You can use WPML to make your website multilingual."
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:69
+#: admin/tab-pages/free_vs_pro.php:85
 msgid "Support Forum"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:70
+#: admin/tab-pages/free_vs_pro.php:86
 msgid "Get instant 24/7 support on our Support Forum."
 msgstr ""
 
-#. Theme Name of the plugin/theme
-#: admin/tab-pages/free_vs_pro.php:84
-msgid "SpicePress"
+#: admin/tab-pages/free_vs_pro.php:99
+msgid "Free"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:90
+#: admin/tab-pages/free_vs_pro.php:104
 msgid ""
 "Slider [Static Image], Services [3 Services], Portfolio [3 Portfolio], "
 "Testimonial, Latest News"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:95
-msgid "Business Template and Full-Width Template"
+#: admin/tab-pages/free_vs_pro.php:107
+msgid "Business, About, Contact and Full-Width Templates"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:96
-msgid "Wide Layout"
+#: admin/tab-pages/free_vs_pro.php:108 admin/tab-pages/free_vs_pro.php:149
+msgid "Wide & Boxed layout"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:110
+#: admin/tab-pages/free_vs_pro.php:109
+msgid "3 Layouts"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:120
+msgid "One testimonial + 1 variation"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:123
+msgid "Not Editable"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:129
 msgid "On WordPress.org Support Forum"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:122
-msgid "SpicePress PRO"
+#: admin/tab-pages/free_vs_pro.php:141
+msgid "Pro"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:127
+#: admin/tab-pages/free_vs_pro.php:146
 msgid ""
 "Top Header, Slider [Unlimited], Services [Unlimited], Portfolio "
 "[Unlimited], Latest News, Clients, Testimonials, Custom Widgets"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:129
+#: admin/tab-pages/free_vs_pro.php:148
 msgid ""
 "About, Services, Portfolio, Blog Left & Right Sidebars, Blog Full Width, "
 "Page Full Width, Contact Page and much more."
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:130
-msgid "Wide layout & Boxed Layout"
+#: admin/tab-pages/free_vs_pro.php:150
+msgid "4 Layouts"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:143
+#: admin/tab-pages/free_vs_pro.php:161
+msgid "Unlimited testimonials + 4 variations"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:164
+msgid "Editable"
+msgstr ""
+
+#: admin/tab-pages/free_vs_pro.php:169
 msgid "Premium Support Forum"
 msgstr ""
 
-#: admin/tab-pages/free_vs_pro.php:153
-msgid "Get SpicePress PRO Now!"
+#: admin/tab-pages/free_vs_pro.php:179
+msgid "Get PRO Version Now!"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:14
+#: admin/tab-pages/getting-started.php:12
 msgid "About the SpicePress theme"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:20
+#: admin/tab-pages/getting-started.php:18
 msgid ""
 "This theme is ideal for creating corporate and business websites. The PRO "
 "version has tons of features: a homepage with many sections where you can "
@@ -380,7 +445,7 @@ msgid ""
 "template is carefully designed to fit to all business requirements."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:22
+#: admin/tab-pages/getting-started.php:20
 msgid ""
 "You can use this theme for any type of activity. SpicePress is compatible "
 "with popular plugins like WPML and Polylang. To help you create an "
@@ -388,42 +453,42 @@ msgid ""
 "of many pages: Contact, Services, Portfolios, About Us and Blog."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:30
+#: admin/tab-pages/getting-started.php:27
 msgid ""
 "To take full advantage of all the features this theme has to offer, "
 "install and activate the SpiceBox plugin. Go to Customize and install the "
 "SpiceBox plugin."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:33
+#: admin/tab-pages/getting-started.php:30
 msgid "Go to the Customizer"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:39
+#: admin/tab-pages/getting-started.php:36
 msgid "SpicePress theme"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:47
+#: admin/tab-pages/getting-started.php:44
 msgid "Useful Links"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:54
+#: admin/tab-pages/getting-started.php:51
 msgid "Lite Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:58
+#: admin/tab-pages/getting-started.php:55
 msgid "PRO Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:69
+#: admin/tab-pages/getting-started.php:66
 msgid "Your feedback is valuable to us"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:72
+#: admin/tab-pages/getting-started.php:69
 msgid "Premium Theme Support"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:82
+#: admin/tab-pages/getting-started.php:76
 msgid "Premium Theme Details"
 msgstr ""
 
@@ -569,11 +634,9 @@ msgstr ""
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:388 class-tgm-plugin-activation.php:2952
+#: class-tgm-plugin-activation.php:388
 msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr ""
 
 #. translators: 1: plugin name.
 #: class-tgm-plugin-activation.php:390
@@ -764,7 +827,6 @@ msgid "Version"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:2554
-#: functions/customizer-repeater/class/customizer-repeater-control.php:585
 msgid "Status"
 msgstr ""
 
@@ -821,6 +883,12 @@ msgstr ""
 #: class-tgm-plugin-activation.php:2934
 msgid "No plugins are available to be activated at this time."
 msgstr ""
+
+#: class-tgm-plugin-activation.php:2952
+msgid "The following plugin is activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: class-tgm-plugin-activation.php:3158
 msgid "Plugin activation failed."
@@ -901,107 +969,146 @@ msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: comments.php:21
+#: comments.php:18
 msgid "Reply"
 msgstr ""
 
-#: comments.php:30
+#: comments.php:27
 msgid "Posted on"
 msgstr ""
 
-#: comments.php:33
+#: comments.php:30
 msgid "Edit"
 msgstr ""
 
-#: comments.php:36
+#: comments.php:33
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: comments.php:55
+#: comments.php:52
 msgid "No comments so far"
 msgstr ""
 
-#: comments.php:55
+#: comments.php:52
 msgid "1 comment so far"
 msgstr ""
 
-#: comments.php:55
+#: comments.php:52
 msgid "% Comments"
 msgstr ""
 
-#: comments.php:63
+#: comments.php:60
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:64
+#: comments.php:61
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:65
+#: comments.php:62
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:70 comments.php:116
+#: comments.php:67 comments.php:113
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:82
+#: comments.php:79
 msgid "Name"
 msgstr ""
 
-#: comments.php:83
+#: comments.php:80
 msgid "Email"
 msgstr ""
 
-#: comments.php:95
+#: comments.php:92
 msgid "Message"
 msgstr ""
 
-#: comments.php:96
+#: comments.php:93
 msgid "Logged in as"
 msgstr ""
 
-#: comments.php:96
+#: comments.php:93
 msgid "Logout of this account"
 msgstr ""
 
-#: comments.php:96
+#: comments.php:93
 msgid "Log out"
 msgstr ""
 
-#: comments.php:98
+#: comments.php:95
 msgid "Send Message"
 msgstr ""
 
-#: comments.php:102
+#: comments.php:99
 msgid "Leave a Reply"
 msgstr ""
 
-#: content-page.php:36 content.php:34
-#: functions/customizer/customizer_general_settings.php:305
-#: functions/template-tags.php:178 index-news.php:60
-#: template/template-page-full-width.php:28
+#: content-page.php:24 content-single.php:34 content.php:41 content.php:45
+#: content.php:53 functions/template-tags.php:53
+#: functions/template-tags.php:263 index-news.php:60
+#: template/template-page-full-width.php:29
 msgid "Read More"
 msgstr ""
 
-#: footer.php:5 functions/customizer/customizer_general_settings.php:274
+#: footer.php:5
 msgid ""
-"<a href=\"https://wordpress.org\">Proudly powered by WordPress</a> | "
-"Theme: <a href=\"https://spicethemes.com\" rel=\"designer\">SpicePress</a> "
+"Proudly powered by <a href=\"https://wordpress.org\">WordPress</a> | "
+"Theme: <a href=\"https://spicethemes.com\" rel=\"nofollow\">SpicePress</a> "
 "by SpiceThemes"
 msgstr ""
 
-#: functions.php:65
+#: footer.php:23
+msgid "Proudly powered by"
+msgstr ""
+
+#: footer.php:23
+msgid "https://wordpress.org"
+msgstr ""
+
+#: footer.php:23
+msgid "WordPress"
+msgstr ""
+
+#: footer.php:23
+msgid "| Theme:"
+msgstr ""
+
+#. Author URI of the plugin/theme
+#: footer.php:23
+msgid "https://spicethemes.com"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+#: footer.php:23
+msgid "SpicePress"
+msgstr ""
+
+#: footer.php:23
+msgid "by SpiceThemes"
+msgstr ""
+
+#: functions.php:70
 msgid "Page"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:116
+#: functions/customizer/customizer_color_back_settings.php:159
 msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:217
+msgid "Instagram Feed"
+msgstr ""
+
+#: functions.php:222
+msgid "Spice Box"
 msgstr ""
 
 #: functions/breadcrumbs/breadcrumbs.php:52
 #: functions/breadcrumbs/breadcrumbs.php:55
-#: functions/menu/default_menu_walker.php:23
+#: functions/menu/default_menu_walker.php:23 index.php:32 index.php:41
 msgid "Home"
 msgstr ""
 
@@ -1029,141 +1136,8 @@ msgstr ""
 msgid "d"
 msgstr ""
 
-#: functions/breadcrumbs/breadcrumbs.php:108
+#: functions/breadcrumbs/breadcrumbs.php:113
 msgid "Error 404"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:33
-msgid "Add new field"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:38
-msgid "Customizer Repeater"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:256
-#: functions/customizer-repeater/class/customizer-repeater-control.php:405
-#: functions/customizer/customizer_sections_settings.php:52
-msgid "Title"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:263
-#: functions/customizer-repeater/class/customizer-repeater-control.php:412
-msgid "Subtitle"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:270
-#: functions/customizer-repeater/class/customizer-repeater-control.php:419
-#: functions/customizer/customizer_sections_settings.php:64
-msgid "Description"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:279
-#: functions/customizer-repeater/class/customizer-repeater-control.php:427
-msgid "Button Text"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:290
-#: functions/customizer-repeater/class/customizer-repeater-control.php:437
-#: functions/customizer-repeater/class/customizer-repeater-control.php:626
-#: functions/customizer-repeater/class/customizer-repeater-control.php:648
-msgid "Link"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:309
-#: functions/customizer-repeater/class/customizer-repeater-control.php:455
-msgid "Video Url"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:333
-#: functions/customizer-repeater/class/customizer-repeater-control.php:397
-msgid "Color"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:343
-#: functions/customizer-repeater/class/customizer-repeater-control.php:466
-msgid "Shortcode"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:351
-#: functions/customizer-repeater/class/customizer-repeater-control.php:475
-msgid "Designation"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:367
-#: functions/customizer-repeater/class/customizer-repeater-control.php:486
-msgid "Delete field"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:523
-msgid "Open link in new tab:"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:534
-#: functions/customizer-repeater/class/customizer-repeater-control.php:602
-msgid "Icon"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:539
-#, php-format
-msgid ""
-"Note: Some icons may not be displayed here. You can see the full list of "
-"icons at %1$s."
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:540
-msgid "http://fontawesome.io/icons/"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:557
-#: functions/customizer-repeater/class/customizer-repeater-control.php:603
-msgid "Image"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:560
-msgid "Upload Image"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:569
-msgid "Slide Format"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:573
-msgid "Standard"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:577
-msgid "Aside"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:581
-msgid "Quote"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:589
-msgid "Video"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:599
-msgid "Image type"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:604
-msgid "None"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:612
-msgid "Social icons"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:629
-#: functions/customizer-repeater/class/customizer-repeater-control.php:659
-msgid "Remove Icon"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:634
-#: functions/customizer-repeater/class/customizer-repeater-control.php:667
-msgid "Add Icon"
 msgstr ""
 
 #: functions/customizer/customizer-pro.php:12
@@ -1174,24 +1148,76 @@ msgstr ""
 msgid "Upgrade to Pro"
 msgstr ""
 
+#: functions/customizer/customizer_blog_option_settings.php:19
+msgid "Spicepress Theme Blog Option"
+msgstr ""
+
+#: functions/customizer/customizer_blog_option_settings.php:31
+msgid "Blog Section"
+msgstr ""
+
+#: functions/customizer/customizer_blog_option_settings.php:39
+msgid "excerpt"
+msgstr ""
+
+#: functions/customizer/customizer_blog_option_settings.php:46
+msgid "Choose Options"
+msgstr ""
+
+#: functions/customizer/customizer_blog_option_settings.php:50
+msgid "Excerpt"
+msgstr ""
+
+#: functions/customizer/customizer_blog_option_settings.php:51
+msgid "Full Content"
+msgstr ""
+
+#: functions/customizer/customizer_blog_option_settings.php:66
+msgid "Excerpt Length"
+msgstr ""
+
+#: functions/customizer/customizer_blog_option_settings.php:85
+msgid "Single Post"
+msgstr ""
+
+#: functions/customizer/customizer_blog_option_settings.php:100
+msgid "Hide/Show Categroy"
+msgstr ""
+
+#: functions/customizer/customizer_blog_option_settings.php:115
+msgid "Hide/Show Date"
+msgstr ""
+
+#: functions/customizer/customizer_blog_option_settings.php:130
+msgid "Hide/Show Author Name"
+msgstr ""
+
+#: functions/customizer/customizer_blog_option_settings.php:145
+msgid "Hide/Show Tag"
+msgstr ""
+
+#: functions/customizer/customizer_blog_option_settings.php:159
+msgid "Hide/Show Author Details"
+msgstr ""
+
 #: functions/customizer/customizer_bredcrumbs_settings.php:5
 msgid "Archive page title"
 msgstr ""
 
 #: functions/customizer/customizer_bredcrumbs_settings.php:14
 #: functions/customizer/customizer_bredcrumbs_settings.php:20
-#: functions/template-tags.php:93
+#: functions/template-tags.php:178
 msgid "Archive"
 msgstr ""
 
 #: functions/customizer/customizer_bredcrumbs_settings.php:28
 #: functions/customizer/customizer_bredcrumbs_settings.php:34
-#: functions/template-tags.php:111
+#: functions/template-tags.php:196
 msgid "Category"
 msgstr ""
 
 #: functions/customizer/customizer_bredcrumbs_settings.php:42
-#: functions/template-tags.php:117
+#: functions/template-tags.php:202
 msgid "All posts by"
 msgstr ""
 
@@ -1201,30 +1227,193 @@ msgstr ""
 
 #: functions/customizer/customizer_bredcrumbs_settings.php:56
 #: functions/customizer/customizer_bredcrumbs_settings.php:62
-#: functions/template-tags.php:36 functions/template-tags.php:123
+#: functions/template-tags.php:35 functions/template-tags.php:132
+#: functions/template-tags.php:208
 msgid "Tag"
 msgstr ""
 
 #: functions/customizer/customizer_bredcrumbs_settings.php:71
-#: functions/template-tags.php:143
+#: functions/template-tags.php:228
 msgid "Search results for"
 msgstr ""
 
 #: functions/customizer/customizer_bredcrumbs_settings.php:77
-#: searchform.php:4
+#: searchform.php:3
 msgid "Search"
 msgstr ""
 
 #: functions/customizer/customizer_bredcrumbs_settings.php:85
 #: functions/customizer/customizer_bredcrumbs_settings.php:91
-#: functions/template-tags.php:153
+#: functions/template-tags.php:238
 msgid "404"
 msgstr ""
 
 #: functions/customizer/customizer_bredcrumbs_settings.php:100
 #: functions/customizer/customizer_bredcrumbs_settings.php:106
-#: functions/template-tags.php:129
+#: functions/template-tags.php:214
 msgid "Shop"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:11
+msgid "Colors & Background"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:15
+msgid "Background Image"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:16
+#: functions/customizer/customizer_color_back_settings.php:22
+msgid "Note: This setting will only work on the Boxed layout."
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:21
+#: functions/customizer/customizer_color_back_settings.php:280
+msgid "Background Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:30
+#: functions/customizer/customizer_typography.php:26
+msgid "Header"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:47
+#: functions/customizer/customizer_color_back_settings.php:204
+#: functions/customizer/customizer_color_back_settings.php:462
+#: functions/customizer/customizer_color_back_settings.php:643
+msgid "Click here to apply these settings"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:61
+#: functions/customizer/customizer_typography.php:53
+msgid "Site Title"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:87
+#: functions/customizer/customizer_color_back_settings.php:426
+#: functions/customizer/customizer_color_back_settings.php:589
+#: functions/customizer/customizer_color_back_settings.php:679
+msgid "Link Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:99
+#: functions/customizer/customizer_color_back_settings.php:228
+#: functions/customizer/customizer_color_back_settings.php:316
+#: functions/customizer/customizer_color_back_settings.php:438
+#: functions/customizer/customizer_color_back_settings.php:618
+#: functions/customizer/customizer_color_back_settings.php:691
+msgid "Link Hover Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:113
+#: functions/customizer/customizer_typography.php:108
+msgid "Site Tagline"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:139
+#: functions/customizer/customizer_color_back_settings.php:577
+#: functions/customizer/customizer_color_back_settings.php:667
+msgid "Text Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:151
+msgid "Text Hover Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:172
+#: functions/customizer/customizer_typography.php:163
+msgid "Menus"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:216
+#: functions/customizer/customizer_color_back_settings.php:304
+msgid "Text/Link Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:240
+msgid "Active Link Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:254
+#: functions/customizer/customizer_typography.php:218
+msgid "Submenus"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:292
+msgid "Background Hover Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:328
+msgid "Link Active Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:336
+#: functions/customizer/customizer_typography.php:268
+msgid "Banner"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:349
+msgid "Banner Title"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:375
+#: functions/customizer/customizer_color_back_settings.php:565
+#: functions/customizer/customizer_color_back_settings.php:655
+msgid "Title Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:389
+#: functions/customizer/customizer_typography.php:350
+msgid "Breadcrumb Title"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:402
+msgid "Click here to apply below settings"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:447
+#: functions/customizer/customizer_typography.php:537
+msgid "Content"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:474
+msgid "H1 Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:486
+msgid "H2 Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:498
+msgid "H3 Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:510
+msgid "H4 Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:522
+msgid "H5 Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:534
+msgid "H6 Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:546
+msgid "Paragraph Text Color"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:554
+msgid "Sidebar"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:606
+msgid "Click here to apply below setting"
+msgstr ""
+
+#: functions/customizer/customizer_color_back_settings.php:627
+msgid "Footer Widget"
 msgstr ""
 
 #: functions/customizer/customizer_general_settings.php:153
@@ -1251,44 +1440,16 @@ msgstr ""
 msgid "Enter the Min. Size 200px and Max Size 6000px"
 msgstr ""
 
-#: functions/customizer/customizer_general_settings.php:234
+#: functions/customizer/customizer_general_settings.php:235
 msgid "Animation Settings"
 msgstr ""
 
-#: functions/customizer/customizer_general_settings.php:246
+#: functions/customizer/customizer_general_settings.php:247
 msgid "Disable animation effect in desktop"
 msgstr ""
 
-#: functions/customizer/customizer_general_settings.php:258
+#: functions/customizer/customizer_general_settings.php:259
 msgid "Disable animation effect on mobile devices"
-msgstr ""
-
-#: functions/customizer/customizer_general_settings.php:266
-msgid "Footer copyright settings"
-msgstr ""
-
-#: functions/customizer/customizer_general_settings.php:281
-msgid "Copyright text"
-msgstr ""
-
-#: functions/customizer/customizer_general_settings.php:289
-msgid "More Options"
-msgstr ""
-
-#: functions/customizer/customizer_general_settings.php:302
-msgid "More options available for Header in SpicePress Pro"
-msgstr ""
-
-#: functions/customizer/customizer_header_image.php:7
-msgid "Custom header settings"
-msgstr ""
-
-#: functions/customizer/customizer_header_image.php:16
-msgid "Header Headline"
-msgstr ""
-
-#: functions/customizer/customizer_header_image.php:28
-msgid "Header Text"
 msgstr ""
 
 #: functions/customizer/customizer_recommended_plugin.php:12
@@ -1310,60 +1471,276 @@ msgstr ""
 msgid "Deactivate"
 msgstr ""
 
-#: functions/customizer/customizer_sections_settings.php:21
+#: functions/customizer/customizer_sections_settings.php:17
 msgid "Homepage section settings"
 msgstr ""
 
-#: functions/customizer/customizer_sections_settings.php:26
+#: functions/customizer/customizer_sections_settings.php:22
 msgid "Latest News settings"
 msgstr ""
 
-#: functions/customizer/customizer_sections_settings.php:35
+#: functions/customizer/customizer_sections_settings.php:31
 msgid "Enable Home News section"
 msgstr ""
 
-#: functions/customizer/customizer_sections_settings.php:39
+#: functions/customizer/customizer_sections_settings.php:35
 msgid "ON"
 msgstr ""
 
-#: functions/customizer/customizer_sections_settings.php:40
+#: functions/customizer/customizer_sections_settings.php:36
 msgid "OFF"
 msgstr ""
 
-#: functions/customizer/customizer_sections_settings.php:47 index-news.php:10
-msgid "Latest News"
+#: functions/customizer/customizer_sections_settings.php:43
+msgid "Turpis Mollis"
 msgstr ""
 
-#: functions/customizer/customizer_sections_settings.php:82
+#: functions/customizer/customizer_sections_settings.php:48
+#: functions/customizer/customizer_typography.php:1039
+msgid "Title"
+msgstr ""
+
+#: functions/customizer/customizer_sections_settings.php:55 index-news.php:11
+msgid ""
+"Sea summo mazim ex, ea errem eleifend definitionem vim. Ut nec hinc dolor "
+"possim mei ludus efficiendi ei sea summo mazim ex."
+msgstr ""
+
+#: functions/customizer/customizer_sections_settings.php:60
+msgid "Description"
+msgstr ""
+
+#: functions/customizer/customizer_sections_settings.php:78
 msgid "Enable post meta values, like author name, date, comments, etc."
 msgstr ""
 
-#: functions/template-tags.php:26
+#: functions/customizer/customizer_theme_style.php:8
+msgid "Theme style settings"
+msgstr ""
+
+#: functions/customizer/customizer_theme_style.php:19
+msgid "Theme Layout"
+msgstr ""
+
+#: functions/customizer/customizer_theme_style.php:54
+msgid "Layout style"
+msgstr ""
+
+#: functions/customizer/customizer_theme_style.php:72
+msgid "Enable custom color skin"
+msgstr ""
+
+#: functions/customizer/customizer_theme_style.php:86
+msgid "Skin color"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:6
+msgid "Typography settings"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:40
+msgid "Enable Header typography"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:78
+#: functions/customizer/customizer_typography.php:133
+#: functions/customizer/customizer_typography.php:188
+#: functions/customizer/customizer_typography.php:243
+#: functions/customizer/customizer_typography.php:320
+#: functions/customizer/customizer_typography.php:377
+#: functions/customizer/customizer_typography.php:457
+#: functions/customizer/customizer_typography.php:512
+#: functions/customizer/customizer_typography.php:589
+#: functions/customizer/customizer_typography.php:646
+#: functions/customizer/customizer_typography.php:703
+#: functions/customizer/customizer_typography.php:759
+#: functions/customizer/customizer_typography.php:815
+#: functions/customizer/customizer_typography.php:871
+#: functions/customizer/customizer_typography.php:929
+#: functions/customizer/customizer_typography.php:985
+#: functions/customizer/customizer_typography.php:1065
+#: functions/customizer/customizer_typography.php:1145
+#: functions/customizer/customizer_typography.php:1202
+#: functions/customizer/customizer_typography.php:1259
+#: functions/customizer/customizer_typography.php:1338
+#: functions/customizer/customizer_typography.php:1393
+#: functions/customizer/customizer_typography.php:1471
+#: functions/customizer/customizer_typography.php:1526
+msgid "Font family"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:93
+#: functions/customizer/customizer_typography.php:148
+#: functions/customizer/customizer_typography.php:203
+#: functions/customizer/customizer_typography.php:258
+#: functions/customizer/customizer_typography.php:335
+#: functions/customizer/customizer_typography.php:392
+#: functions/customizer/customizer_typography.php:472
+#: functions/customizer/customizer_typography.php:527
+#: functions/customizer/customizer_typography.php:604
+#: functions/customizer/customizer_typography.php:661
+#: functions/customizer/customizer_typography.php:718
+#: functions/customizer/customizer_typography.php:774
+#: functions/customizer/customizer_typography.php:830
+#: functions/customizer/customizer_typography.php:887
+#: functions/customizer/customizer_typography.php:944
+#: functions/customizer/customizer_typography.php:1000
+#: functions/customizer/customizer_typography.php:1080
+#: functions/customizer/customizer_typography.php:1160
+#: functions/customizer/customizer_typography.php:1217
+#: functions/customizer/customizer_typography.php:1274
+#: functions/customizer/customizer_typography.php:1353
+#: functions/customizer/customizer_typography.php:1408
+#: functions/customizer/customizer_typography.php:1486
+#: functions/customizer/customizer_typography.php:1541
+msgid "Font size (px)"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:282
+msgid "Enable Banner typography"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:295
+msgid "Page Title"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:403
+msgid "Homepage Section"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:417
+msgid "Enable Homepage sections typography"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:430
+msgid "Section Title"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:487
+msgid "Section Description"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:551
+msgid "Enable Content typography"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:564
+#: functions/customizer/customizer_typography.php:1118
+msgid "Heading 1 (H1)"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:620
+#: functions/customizer/customizer_typography.php:1176
+msgid "Heading 2 (H2)"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:677
+#: functions/customizer/customizer_typography.php:1233
+msgid "Heading 3 (H3)"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:734
+msgid "Heading 4 (H4)"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:790
+msgid "Heading 5 (H5)"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:846
+msgid "Heading 6 (H6)"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:904
+msgid "Paragraph"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:960
+msgid "Button Text"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1011
+msgid "Blog / Archive / Single Post"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1025
+msgid "Enable Blog / Archive / Single Post typography"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1090
+msgid "Shop Page"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1104
+msgid "Enable shop page typography"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1119
+msgid "Only for product detail page"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1177
+msgid "Only for product title in Shop Page"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1234
+msgid "Only for Product checkout page"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1285
+msgid "Sidebar Widgets"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1299
+msgid "Enable Sidebar Widgets typography"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1313
+msgid "Sidebar Widget Title"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1368
+msgid "Sidebar Widget Content"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1418
+msgid "Footer Widgets"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1432
+msgid "Enable Footer Widget typography"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1446
+msgid "Footer Widget Title"
+msgstr ""
+
+#: functions/customizer/customizer_typography.php:1501
+msgid "Footer Widget Content"
+msgstr ""
+
+#: functions/template-tags.php:25 functions/template-tags.php:117
 msgid "By"
 msgstr ""
 
-#: functions/template-tags.php:32
+#: functions/template-tags.php:31 functions/template-tags.php:125
 msgid "in"
 msgstr ""
 
-#: functions/template-tags.php:99 functions/template-tags.php:103
-#: functions/template-tags.php:107 functions/template-tags.php:113
-#: functions/template-tags.php:119 functions/template-tags.php:125
-#: functions/template-tags.php:131 functions/template-tags.php:147
+#: functions/template-tags.php:184 functions/template-tags.php:188
+#: functions/template-tags.php:192 functions/template-tags.php:198
+#: functions/template-tags.php:204 functions/template-tags.php:210
+#: functions/template-tags.php:216 functions/template-tags.php:232
+#: functions/template-tags.php:242
 #, php-format
 msgid "%1$s %2$s"
 msgstr ""
 
-#: functions/template-tags.php:157
-#, php-format
-msgid "%1$s "
-msgstr ""
-
-#: functions/template-tags.php:187
+#: functions/template-tags.php:272
 msgid "previous page"
 msgstr ""
 
-#: functions/template-tags.php:187
+#: functions/template-tags.php:272
 msgid "next page"
 msgstr ""
 
@@ -1391,22 +1768,30 @@ msgstr ""
 msgid "Contact template sidebar"
 msgstr ""
 
-#: header/header-navbar.php:55 header/header-navbar.php:66
-#: header/header-navbar.php:101 header/header-navbar.php:150
+#: header.php:24
+msgid "Skip to content"
+msgstr ""
+
+#: header/header-navbar.php:27 header/header-navbar.php:38
+#: header/header-navbar.php:69 header/header-navbar.php:116
 msgid "Toggle navigation"
 msgstr ""
 
-#: search.php:28
-msgid "Nothing found"
+#: index-news.php:10
+msgid "Turpis mollis"
 msgstr ""
 
 #: search.php:29
+msgid "Nothing found"
+msgstr ""
+
+#: search.php:30
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with "
 "some different keywords."
 msgstr ""
 
-#: searchform.php:3
+#: searchform.php:2
 msgid "Search here"
 msgstr ""
 
@@ -1428,11 +1813,7 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "spicethemes.com"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://spicethemes.com"
+msgid "spicethemes"
 msgstr ""
 
 #. Template Name of the plugin/theme

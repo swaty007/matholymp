@@ -2,9 +2,10 @@
 /**
  * Template name:Full-width page
  */
-get_header(); 
+get_header();
 spicepress_breadcrumbs(); ?>
 <!-- Blog & Sidebar Section -->
+<div id="content">
 <section class="blog-section">
 	<div class="container">
 		<div class="row">	
@@ -18,9 +19,9 @@ spicepress_breadcrumbs(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-content-area wow fadeInDown animated' ); ?> data-wow-delay="0.4s">
 
 					<?php 
-						echo '<div class="blog-featured-img"><a class="post-thumbnail" href="'.esc_url(get_the_permalink()).'">';
+						echo '<div class="blog-featured-img">';
 						the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
-						echo '</a></div>';
+						echo '</div>';
 					?>
 					
 					<div class="post-content">
@@ -32,7 +33,6 @@ spicepress_breadcrumbs(); ?>
 					</div>
 				</article>
 					 <?php
-					
 					comments_template( '', true ); // show comments 
 					
 				endwhile;
@@ -42,5 +42,6 @@ spicepress_breadcrumbs(); ?>
 		</div>
 	</div>
 </section>
+</div>
 <!-- /Blog & Sidebar Section -->
 <?php get_footer(); ?>

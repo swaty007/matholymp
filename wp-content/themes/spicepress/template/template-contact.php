@@ -2,17 +2,19 @@
 /**
  * Template Name: Contact page
  */
-get_header();
-spicepress_breadcrumbs(); ?>
+get_header(); 
+spicepress_breadcrumbs();
+?>
 
 <!-- Contact Section -->
+<div id="content">
 <section class="cont-section">
 	<div class="container">
 	
 		<div class="row">	
 			<!--Contact Form Section-->
 			<?php if( get_theme_mod('contact_form_enable',true) == true ): ?>
-			<div class="col-md-<?php echo ( is_active_sidebar( 'wdl_contact_page_sidebar' ) ? '8' :'12' ); ?> col-xs-12">
+			<div class="col-md-<?php echo ( is_active_sidebar( 'wdl_contact_page_sidebar' ) ? '8' :'12' ); ?> col-sm-<?php echo ( is_active_sidebar( 'wdl_contact_page_sidebar' ) ? '7' :'12' ); ?> col-xs-12">
 			<div class="cont-form-section wow fadeInDown animated animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInDown;">
 					<?php 
 				the_post();
@@ -26,7 +28,7 @@ spicepress_breadcrumbs(); ?>
 			
 			<!--Contact Info-->
 			<?php if( get_theme_mod('contact_info_enable',true) == true ):?>
-			<div class="col-md-<?php echo ( is_active_sidebar( 'wdl_contact_page_sidebar' ) ? '4' :'12' ); ?> col-xs-12">
+			<div class="col-md-<?php echo ( is_active_sidebar( 'wdl_contact_page_sidebar' ) ? '4' :'12' ); ?> col-sm-<?php echo ( is_active_sidebar( 'wdl_contact_page_sidebar' ) ? '5' :'12' ); ?> col-xs-12">
 					
 				<?php 
 				if( is_active_sidebar('wdl_contact_page_sidebar') ) :
@@ -42,6 +44,7 @@ spicepress_breadcrumbs(); ?>
 		</div>
 	</div>
 </section>
+</div>
 <!-- /Contact Section -->
 
 <?php get_footer(); ?>

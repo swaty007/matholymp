@@ -2,7 +2,7 @@
 // define function for custom color setting
 function spicepress_custom_light() {
     
-    $link_color = get_theme_mod('link_color');
+    $link_color = esc_html(get_theme_mod('link_color'));
     list($r, $g, $b) = sscanf($link_color, "#%02x%02x%02x");
     $r = $r - 50;
     $g = $g - 25;
@@ -35,7 +35,12 @@ function spicepress_custom_light() {
     background-color: <?php echo $link_color; ?>  !important;
 }
 }
-
+/*.navbar-custom .navbar-nav > .active > a, 
+.navbar-custom .navbar-nav > .active > a:hover, 
+.navbar-custom .navbar-nav > .active > a:focus {
+    color: #ffffff ;
+    background-color: <?php echo $link_color; ?>  !important;
+}*/
 
 @media (max-width: 1100px) {
 .navbar-custom .dropdown-menu > li > a:hover, .navbar-custom .dropdown-menu > li > a:focus {
@@ -351,5 +356,9 @@ table a, table a:hover, table a:focus, a, a:hover, a:focus, dl dd a, dl dd a:hov
     background: #21202e;
     border: 1px solid #ffffff;
 }
+.navbar-center-fullwidth .navbar-nav > li.active > a, .navbar-center-fullwidth .navbar-nav > li.active > a:hover, .navbar-center-fullwidth .navbar-nav > li.active > a:focus {
+    color: <?php echo $link_color; ?> !important;
+}
+
 </style>
 <?php endif; } ?>

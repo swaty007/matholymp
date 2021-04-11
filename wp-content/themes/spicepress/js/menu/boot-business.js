@@ -22,10 +22,5 @@ jQuery("document").ready(function() {
 	});
 	/*End: Prevent the default white background on blur of top navigation */
 
-  /*Start : Automatically start the slider */
-	jQuery('.carousel').carousel({
-      interval: 4000
-   });
-	/*End: Automatically start the slider */
 
 });

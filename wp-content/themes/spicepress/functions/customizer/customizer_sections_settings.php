@@ -1,8 +1,4 @@
 <?php
-$repeater_path = trailingslashit( ST_TEMPLATE_DIR ) . '/functions/customizer-repeater/functions.php';
-if ( file_exists( $repeater_path ) ) {
-require_once( $repeater_path );
-}
 /**
  * Customize for taxonomy with dropdown, extend the WP customizer
  */
@@ -44,7 +40,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		// News section title
 		$wp_customize->add_setting( 'home_news_section_title',array(
 		'capability'     => 'edit_theme_options',
-		'default' => esc_html__('Latest News','spicepress'),
+		'default' => esc_html__('Turpis Mollis','spicepress'),
 		'sanitize_callback' => 'spicepress_home_page_sanitize_text',
 		'transport'         => $selective_refresh,
 		));	
@@ -56,9 +52,9 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		
 		//News section discription
 		$wp_customize->add_setting( 'home_news_section_discription',array(
-		'default'=> 'Sea summo mazim ex, ea errem eleifend definitionem vim. Ut nec hinc dolor possim mei ludus efficiendi ei sea summo mazim ex.',
+		'default'=> esc_html__('Sea summo mazim ex, ea errem eleifend definitionem vim. Ut nec hinc dolor possim mei ludus efficiendi ei sea summo mazim ex.','spicepress'),
 		'transport'         => $selective_refresh,
-		'sanitize_callback' => 'wp_filter_nohtml_kses',
+		'sanitize_callback' => 'spicepress_sanitize_textarea',
 		));	
 		$wp_customize->add_control( 'home_news_section_discription',array(
 		'label'   => esc_html__('Description','spicepress'),
@@ -140,3 +136,7 @@ function spicepress_sanitize_radio( $input, $setting ){
             return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
              
         }
+function spicepress_sanitize_textarea( $input ) 
+{
+	return wp_kses_post( force_balance_tags( $input ) );
+}

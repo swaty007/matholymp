@@ -1,30 +1,30 @@
 <?php 
-$latest_news_section_enable = get_theme_mod('latest_news_section_enable','on');
-if($latest_news_section_enable !='off')
+$spicepress_latest_news_section_enable = get_theme_mod('latest_news_section_enable','on');
+if($spicepress_latest_news_section_enable !='off')
 {
 ?>
 <!-- Latest News section -->
 <section class="home-news" id="blog">
 	<div class="container">
 		<?php
-		$home_news_section_title = get_theme_mod('home_news_section_title',__('Latest News','spicepress'));
-		$home_news_section_discription = get_theme_mod('home_news_section_discription','Sea summo mazim ex, ea errem eleifend definitionem vim. Ut nec hinc dolor possim mei ludus efficiendi ei sea summo mazim ex.');
+		$spicepress_home_news_section_title = get_theme_mod('home_news_section_title',__('Turpis mollis','spicepress'));
+		$spicepress_home_news_section_discription = get_theme_mod('home_news_section_discription',__('Sea summo mazim ex, ea errem eleifend definitionem vim. Ut nec hinc dolor possim mei ludus efficiendi ei sea summo mazim ex.','spicepress'));
 		
-		if(($home_news_section_title) || ($home_news_section_discription)!='' ) { 
+		if(($spicepress_home_news_section_title) || ($spicepress_home_news_section_discription)!='' ) { 
 		?>
 	    <!-- Section Title -->
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-header">
-					<?php if($home_news_section_title) {?>
+					<?php if($spicepress_home_news_section_title) {?>
 					<h1 class="widget-title wow fadeInUp animated animated" data-wow-duration="500ms" data-wow-delay="0ms">
-					<?php echo esc_html($home_news_section_title); ?>
+					<?php echo esc_html($spicepress_home_news_section_title); ?>
 					</h1>
 					<?php } ?>
 					<div class="widget-separator"><span></span></div>
-					<?php if($home_news_section_discription) {?>
+					<?php if($spicepress_home_news_section_discription) {?>
 					<p class="wow fadeInDown animated">
-					<?php echo esc_html($home_news_section_discription); ?>
+					<?php echo esc_html($spicepress_home_news_section_discription); ?>
 					</p>
 					<?php } ?>
 				</div>
@@ -67,4 +67,4 @@ if($latest_news_section_enable !='off')
 </section>
 <!-- /Latest News Section -->
 <div class="clearfix"></div>
-<?php } ?>
+<?php }

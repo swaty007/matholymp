@@ -2,12 +2,11 @@
 if ( ! function_exists( 'spicepress_blog_meta_content' ) ) :
 function spicepress_blog_meta_content()
 { 
-	$blog_meta_section_enable = get_theme_mod('blog_meta_section_enable',true);
-	
-	if( $blog_meta_section_enable == true ) { ?>
+	$spicepress_blog_meta_section_enable = get_theme_mod('blog_meta_section_enable',true);	
+	if( $spicepress_blog_meta_section_enable == true ) { ?>
 	<div class="entry-meta">
 		<span class="entry-date">
-			<a href="<?php echo esc_url(get_month_link(esc_html(get_post_time('Y')),esc_html(get_post_time('m')))); ?>"><time datetime=""><?php echo esc_html(get_the_date('M j, Y')); ?></time></a>
+			<a href="<?php echo esc_url(get_month_link(esc_html(get_post_time('Y')),esc_html(get_post_time('m')))); ?>"><time datetime=""><?php echo esc_html(get_the_date()); ?></time></a>
 		</span>
 	</div>
 <?php } 
@@ -17,9 +16,9 @@ endif;
 if ( ! function_exists( 'spicepress_blog_category_content' ) ) :
 function spicepress_blog_category_content()
 {
-	$blog_meta_section_enable = get_theme_mod('blog_meta_section_enable',true);
+	$spicepress_blog_meta_section_enable = get_theme_mod('blog_meta_section_enable',true);
 	
-	if( $blog_meta_section_enable == true ) {
+	if( $spicepress_blog_meta_section_enable == true ) {
 
 ?>
 <div class="entry-meta">
@@ -27,21 +26,119 @@ function spicepress_blog_category_content()
 	
 	</span>
 	<?php 	
-	$cat_list = get_the_category_list();
-		if(!empty($cat_list)) { ?>
-	<span class="cat-links"><?php esc_html_e('in','spicepress');?><a href="<?php the_permalink(); ?>"><?php the_category(', '); ?></a></span>
+	$spicepress_cat_list = get_the_category_list();
+		if(!empty($spicepress_cat_list)) { ?>
+	<span class="cat-links"><?php esc_html_e('in','spicepress');?><?php the_category(', '); ?></span>
 	<?php } 
-	    $tag_list = get_the_tag_list();
-		if(!empty($tag_list)) { ?>
+	    $spicepress_tag_list = get_the_tag_list();
+		if(!empty($spicepress_tag_list)) { ?>
 				<span class="tag-links"><?php esc_html_e('Tag','spicepress');?> <?php the_tags('', ', ', ''); ?></span>
 				<?php } ?>
 
 </div>	 
 <?php } } endif;
+
+//Blog Content
+if ( ! function_exists( 'spicepress_posted_content' ) ) :
+    function spicepress_posted_content() { 
+      $spicepress_blog_content  = get_theme_mod('spicepress_blog_content','excerpt');
+      $spicepress_excerpt_length  = get_theme_mod('spicepress_blog_content_length',30);
+
+      if ( 'excerpt' == $spicepress_blog_content ){
+      $spicepress_excerpt = spicepress_the_excerpt( absint( $spicepress_excerpt_length ) );
+      if ( !empty( $spicepress_excerpt ) ) :                   
+          echo wp_kses_post( wpautop( $spicepress_excerpt ) );
+           endif; 
+      } else{ 
+       the_content( __('Read More','spicepress') );
+        }
+ }
+endif;
+
+if ( ! function_exists( 'spicepress_the_excerpt' ) ) :
+
+    /**
+     * Generate excerpt.
+     *
+     */
+    function spicepress_the_excerpt( $length = 0, $post_obj = null ) {
+
+        global $post;
+
+        if ( is_null( $post_obj ) ) {
+            $post_obj = $post;
+        }
+
+        $length = absint( $length );
+
+        if ( 0 === $length ) {
+            return;
+        }
+
+        $source_content = $post_obj->post_content;
+
+        if ( ! empty( $post_obj->post_excerpt ) ) {
+            $source_content = $post_obj->post_excerpt;
+        }
+
+        $source_content = preg_replace( '`\[[^\]]*\]`', '', $source_content );
+        $trimmed_content = wp_trim_words( $source_content, $length, '&hellip;' );
+        return $trimmed_content;
+
+    }
+endif;
+//Single post meta content
+if ( ! function_exists( 'spicepres_single_post_meta_content' ) ) :
+
+function spicepres_single_post_meta_content(){	
+	$spicepress_blog_meta_section_enable = get_theme_mod('blog_meta_section_enable',true);	
+	if( $spicepress_blog_meta_section_enable == true ) { 
+		if(get_theme_mod('spicepress_enable_single_post_date',true)==true):?>
+			<div class="entry-meta">
+				<span class="entry-date">
+					<a href="<?php echo esc_url(get_month_link(esc_html(get_post_time('Y')),esc_html(get_post_time('m')))); ?>"><time datetime=""><?php echo esc_html(get_the_date()); ?></time></a>
+				</span>
+			</div>
+		<?php 
+		endif;
+	} 
+}
+endif;
+
+//Single post Category
+if ( ! function_exists( 'spicepress_single_post_category_content' ) ) :
+
+function spicepress_single_post_category_content()
+{		
+	if( get_theme_mod('spicepress_enable_single_post_admin',true)== true || get_theme_mod('spicepress_enable_single_post_category',true)==true || get_theme_mod('spicepress_enable_single_post_tag',true)==true ) {?>
+		<div class="entry-meta">
+
+			<?php if(get_theme_mod('spicepress_enable_single_post_admin',true)==true):?>
+				<span class="author"><?php esc_html_e('By','spicepress');?> <a rel="tag" href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ));?>"><?php echo esc_html(get_the_author());?></a>		
+				</span>
+			<?php 
+			endif;
+
+			if(get_theme_mod('spicepress_enable_single_post_category',true)==true):	
+				$spicepress_cat_list = get_the_category_list();
+				if(!empty($spicepress_cat_list)) { ?>
+					<span class="cat-links"><?php esc_html_e('in','spicepress');?><?php the_category(', '); ?></span>
+				<?php } 
+			endif;
+
+			if(get_theme_mod('spicepress_enable_single_post_tag',true)==true):	
+				$spicepress_tag_list = get_the_tag_list();
+				if(!empty($spicepress_tag_list)) { ?>
+						<span class="tag-links"><?php esc_html_e('Tag','spicepress');?> <?php the_tags('', ', ', ''); ?></span>
+				<?php } 
+			endif;?>
+
+		</div>	 
+<?php } } endif;
 // avator class
 function spicepress_gravatar_class($class) {
-    $class = str_replace("class='avatar", "class='img-responsive img-circle", $class);
-    return $class;
+    $spicepress_class = str_replace("class='avatar", "class='img-responsive img-circle", $class);
+    return $spicepress_class;
 }
 add_filter('get_avatar','spicepress_gravatar_class');
 
@@ -58,77 +155,65 @@ function spicepress_author_meta()
 			<h6><?php the_author_link(); ?></h6>
 			<p><?php the_author_meta( 'description' ); ?></p>
 			<ul class="blog-author-social">
-			    <?php $facebook_profile = get_the_author_meta( 'facebook_profile' ); if ( $facebook_profile && $facebook_profile != '' ): ?>
-				<li class="facebook"><a href="<?php echo esc_url($facebook_profile); ?>"><i class="fa fa-facebook"></i></a></li>
+			    <?php $spicepress_facebook_profile = get_the_author_meta( 'facebook_profile' ); if ( $spicepress_facebook_profile && $spicepress_facebook_profile != '' ): ?>
+				<li class="facebook"><a href="<?php echo esc_url($spicepress_facebook_profile); ?>"><i class="fa fa-facebook"></i></a></li>
 				<?php endif; ?>
-				<?php $linkedin_profile = get_the_author_meta( 'linkedin_profile' ); if ( $linkedin_profile && $linkedin_profile != '' ): ?>
-				<li class="linkedin"><a href="<?php echo esc_url($linkedin_profile); ?>"><i class="fa fa-linkedin"></i></a></li>
+				<?php $spicepress_linkedin_profile = get_the_author_meta( 'linkedin_profile' ); if ( $spicepress_linkedin_profile && $spicepress_linkedin_profile != '' ): ?>
+				<li class="linkedin"><a href="<?php echo esc_url($spicepress_linkedin_profile); ?>"><i class="fa fa-linkedin"></i></a></li>
 				<?php endif; ?>
-				<?php $twitter_profile = get_the_author_meta( 'twitter_profile' ); if ( $twitter_profile && $twitter_profile != '' ): ?>
-				<li class="twitter"><a href="<?php echo esc_url($twitter_profile); ?>"><i class="fa fa-twitter"></i></a></li>
+				<?php $spicepress_twitter_profile = get_the_author_meta( 'twitter_profile' ); if ( $spicepress_twitter_profile && $spicepress_twitter_profile != '' ): ?>
+				<li class="twitter"><a href="<?php echo esc_url($spicepress_twitter_profile); ?>"><i class="fa fa-twitter"></i></a></li>
 				<?php endif; ?>
-				<?php $google_profile = get_the_author_meta( 'google_profile' ); if ( $google_profile && $google_profile != '' ): ?>
-				<li class="googleplus"><a href="<?php echo esc_url($google_profile); ?>"><i class="fa fa-google-plus"></i></a></li>
-				<?php endif; ?>
+				
 		   </ul>
 		</div>
 	</div>	
 </article>
 <?php }
 
-// author profile data
-function spicepress_author_social_icons( $contactmethods ) {
-		$contactmethods['facebook_profile'] = 'Facebook Profile URL';
-		$contactmethods['twitter_profile'] = 'Twitter Profile URL';
-		$contactmethods['linkedin_profile'] = 'Linkedin Profile URL';
-		$contactmethods['google_profile'] = 'Google Profile URL';
-		return $contactmethods;
-	}
-add_filter( 'user_contactmethods', 'spicepress_author_social_icons', 10, 1);
-
 // blogs,pages and archive page title
 function spicepress_archive_page_title(){
 	if( is_archive() )
 	{
-		$archive_text = get_theme_mod('archive_prefix', __('Archive','spicepress'));
+		$spicepress_archive_text = get_theme_mod('archive_prefix', esc_html__('Archive','spicepress'));
 		
 		echo '<div class="page-title wow bounceInLeft animated" ata-wow-delay="0.4s"><h1>';
 		
 		if ( is_day() ) :
 		
-		  printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($archive_text), esc_html(get_the_date()) );
+		  printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($spicepress_archive_text), esc_html(get_the_date()) );
 		  
         elseif ( is_month() ) :
 		
-		  printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($archive_text), esc_html(get_the_date( 'F Y' )) );
+		  printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($spicepress_archive_text), esc_html(get_the_date()) );
 		  
         elseif ( is_year() ) :
 		
-		  printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($archive_text), esc_html(get_the_date( 'Y' )) );
+		  printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($spicepress_archive_text), esc_html(get_the_date()) );
 		  
         elseif( is_category() ):
 		
-			$category_text = get_theme_mod('category_prefix',__('Category','spicepress'));
+			$spicepress_category_text = get_theme_mod('category_prefix',esc_html__('Category','spicepress'));
 			
-			printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($category_text), single_cat_title( '', false ) );
+			printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($spicepress_category_text), single_cat_title( '', false ) );
 			
 		elseif( is_author() ):
 			
-			$author_text = get_theme_mod('author_prefix',__('All posts by','spicepress'));
+			$spicepress_author_text = get_theme_mod('author_prefix',esc_html__('All posts by','spicepress'));
 		
-			printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($author_text), esc_html(get_the_author() ));
+			printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($spicepress_author_text), esc_html(get_the_author() ));
 			
 		elseif( is_tag() ):
 			
-			$tag_text = get_theme_mod('tag_prefix',__('Tag','spicepress'));
+			$spicepress_tag_text = get_theme_mod('tag_prefix',esc_html__('Tag','spicepress'));
 			
-			printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($tag_text), single_tag_title( '', false ) );
+			printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($spicepress_tag_text), single_tag_title( '', false ) );
 			
 		elseif( class_exists( 'WooCommerce' ) && is_shop() ):
 			
-		$shop_text = get_theme_mod('shop_prefix',__('Shop','spicepress'));
+		$spicepress_shop_text = get_theme_mod('shop_prefix',esc_html__('Shop','spicepress'));
 			
-		printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($shop_text), single_tag_title( '', false ));
+		printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($spicepress_shop_text), single_tag_title( '', false ));
 			
         elseif( is_archive() ): 
 		the_archive_title( '<h1>', '</h1>' ); 
@@ -140,21 +225,21 @@ function spicepress_archive_page_title(){
 	}
 	elseif( is_search() )
 	{
-		$search_text = get_theme_mod('search_prefix',__('Search results for','spicepress'));
+		$spicepress_search_text = get_theme_mod('search_prefix',__('Search results for','spicepress'));
 		
 		echo '<div class="page-title wow bounceInLeft animated" ata-wow-delay="0.4s"><h1>';
 		
-		printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($search_text), get_search_query() );
+		printf( esc_html__( '%1$s %2$s', 'spicepress' ), esc_html($spicepress_search_text), get_search_query() );
 		
 		echo '</h1></div>';
 	}
 	elseif( is_404() )
 	{
-		$breadcrumbs_text = get_theme_mod('404_prefix',__('404','spicepress'));
+		$spicepress_breadcrumbs_text = get_theme_mod('404_prefix',__('404','spicepress'));
 		
 		echo '<div class="page-title wow bounceInLeft animated" ata-wow-delay="0.4s"><h1>';
 		
-		printf( esc_html__( '%1$s ', 'spicepress' ) , esc_html($breadcrumbs_text) );
+		printf( esc_html__( '%1$s %2$s', 'spicepress' ) , esc_html($spicepress_breadcrumbs_text), '' );
 		
 		echo '</h1></div>';
 	}
@@ -170,7 +255,7 @@ function spicepress_archive_page_title(){
 									'span'   => array(),
 								);	
 		
-		echo '<div class="page-title wow bounceInLeft animated" ata-wow-delay="0.4s"><h1>'.wp_kses( force_balance_tags( get_the_title()), $allowed_html ).'</h1></div>';
+		echo '<div class="page-title wow bounceInLeft animated" ata-wow-delay="0.4s"><h1>'.esc_html(get_the_title(), $allowed_html).'</h1></div>';
 	}
 }
 
@@ -206,52 +291,19 @@ if(!function_exists( 'spicepress_image_thumbnail')) :
 	the_post_thumbnail($preset, $defalt_arg); } } 
 endif;
 
-// Custom header function
-if ( ! function_exists( 'spicepress_header_style' ) ) :
-
-function spicepress_header_style() {
-    $text_color = get_header_textcolor();
-
-    // If no custom color for text is set, let's bail.
-    if ( display_header_text() && $text_color === get_theme_support( 'custom-header', 'default-text-color' ) )
-        return;
-    ?>
-    <style type="text/css" id="spicepress-header-css">
-        <?php
-        // Has the text been hidden?
-        if ( ! display_header_text() ) :
-    ?>
-        .site-title,
-        .site-description {
-            clip: rect(1px 1px 1px 1px); /* IE7 */
-            clip: rect(1px, 1px, 1px, 1px);
-            position: absolute;
-        }
-    <?php
-        // If the user has set a custom color for the text, use that.
-        elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
-    ?>
-        .site-title a {
-            color: #<?php echo esc_attr( $text_color ); ?>;
-        }
-    <?php endif; ?>
-    </style>
-    <?php
-}
-endif;
-
-
 /*----Function for the menu breakpoint----*/ 
 
 add_action('wp_head','spicepress_custom_menu_breakpoint');
 function spicepress_custom_menu_breakpoint() {
 	
-$menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
+$spicepress_menu_breakpoint = esc_html(get_theme_mod('menu_breakpoint', 1100));
+ $link_color = esc_html(get_theme_mod('link_color'));
+
 ?>
 <style type="text/css">
 
 
-@media (max-width: <?php echo $menu_breakpoint; ?>px) { 
+@media (max-width: <?php echo $spicepress_menu_breakpoint; ?>px) { 
 	.navbar-custom .dropdown-menu {
 		border-top: none;
 		border-bottom: none;	
@@ -260,24 +312,49 @@ $menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
 	}		
 }
 
-@media (min-width: 100px) and (max-width: <?php echo $menu_breakpoint; ?>px) { 
+@media (min-width: <?php echo $spicepress_menu_breakpoint; ?>px) {
+.navbar-nav li button { display: none;} 
+}
+
+@media (min-width: <?php echo $spicepress_menu_breakpoint; ?>px){
+.navbar-nav ul.dropdown-menu  .caret {
+        float: right;
+        border: none;
+}}
+
+@media (min-width: <?php echo $spicepress_menu_breakpoint; ?>px){
+.navbar-nav ul.dropdown-menu  .caret:after {
+        content: "\f0da";
+        font-family: "FontAwesome";
+        font-size: 10px;
+}}
+
+@media (max-width: <?php echo $spicepress_menu_breakpoint; ?>px){
+.caret {
+        position: absolute;
+        right: 0;
+        margin-top: 10px;
+        margin-right: 10px;
+}}
+
+
+@media (min-width: 100px) and (max-width: <?php echo $spicepress_menu_breakpoint; ?>px) { 
 	.navbar .navbar-nav > .active > a, 
 	.navbar .navbar-nav > .active > a:hover, 
 	.navbar .navbar-nav > .active > a:focus {
-		color: #0060ff;
-		background-color: transparent;
+		
+            color: <?php echo $link_color; ?>;
+            background-color: transparent;
 	}
 	.navbar .navbar-nav > .open > a,
 	.navbar .navbar-nav > .open > a:hover,
 	.navbar .navbar-nav > .open > a:focus { 
 		background-color: transparent; 
-		color: #0060ff;
+		
+		 color: <?php echo $link_color; ?>;
 		border-bottom: 1px dotted #4c4a5f; 
 	}
 }
-
-
-
 
 /*===================================================================================*/
 /*	NAVBAR
@@ -388,7 +465,7 @@ $menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
 	Menubar - Media Queries
 --------------------------------------------------------------*/
 
-@media (min-width: <?php echo $menu_breakpoint; ?>px){
+@media (min-width: <?php echo $spicepress_menu_breakpoint; ?>px){
 
 	.navbar-collapse.collapse {
 		display: block !important;
@@ -414,13 +491,13 @@ $menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
 		padding: 20px 50px 20px 0;
 	}
 }
-@media (min-width: <?php echo $menu_breakpoint; ?>px) {
+@media (min-width: <?php echo $spicepress_menu_breakpoint; ?>px) {
 	.navbar-transparent { background: transparent; padding-bottom: 0px; padding-top: 0px; margin: 0; }
 	.navbar-custom .open > .dropdown-menu { visibility: visible; opacity: 1; }
 	.navbar-right .dropdown-menu { right: auto; left: 0; }
 }
  
-<?php if($menu_breakpoint < 991){ ?>
+<?php if($spicepress_menu_breakpoint < 991){ ?>
 @media (min-width: 200px) and (max-width: 991px) {
 	.navbar-custom .container-fluid {
 		width: auto !important;
@@ -429,7 +506,7 @@ $menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
 
 <?php } ?>
 
-@media (min-width: <?php echo $menu_breakpoint+1; ?>px) {
+@media (min-width: <?php echo $spicepress_menu_breakpoint+1; ?>px) {
 	.navbar-custom .container-fluid {
 		width: 970px;
 		padding-right: 15px;
@@ -439,8 +516,8 @@ $menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
 	}
 	
 	.navbar-custom .dropdown-menu { 
-		border-top: 2px solid #0060ff !important;
-		border-bottom: 2px solid #0060ff !important;
+		border-top: 2px solid #ce1b28 !important;
+		border-bottom: 2px solid #ce1b28 !important;
 		position: absolute !important; 
 		display: block; 
 		visibility: hidden; 
@@ -471,7 +548,7 @@ $menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
 
 /** BELOW MAX-WIDTH MEDIA QUERIES **/
 
-@media (max-width: <?php echo $menu_breakpoint; ?>px) {
+@media (max-width: <?php echo $spicepress_menu_breakpoint; ?>px) {
 	/* Navbar */
 	.navbar-custom .navbar-nav { letter-spacing: 0px; margin-top: 1px; margin-bottom: 0; }
 	.navbar-custom .navbar-nav li { margin: 0 15px; padding: 0; }
@@ -529,7 +606,7 @@ $menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
 	.collapsing { overflow: hidden!important; }
 	
 }
-@media (max-width: <?php echo $menu_breakpoint; ?>px) { 
+@media (max-width: <?php echo $spicepress_menu_breakpoint; ?>px) { 
 	.navbar-custom .dropdown a > i.fa {
 		font-size: 0.938rem;
 		position: absolute;
@@ -601,7 +678,7 @@ $menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
-@media (min-width: 100px) and (max-width: <?php echo $menu_breakpoint; ?>px) { 
+@media (min-width: 100px) and (max-width: <?php echo $spicepress_menu_breakpoint; ?>px) { 
 .cart-header { float: left; margin: 20px 7px 20px 15px !important; }
 .cart-header > a.cart-icon { color: #fff; }
 }
@@ -609,13 +686,8 @@ $menu_breakpoint = get_theme_mod('menu_breakpoint', 1100);
 
 /*--------------------------------------------------------------
 	Navbar Overlapped & Stiky Header Css
---------------------------------------------------------------*/
-
-body.page .header-overlapped ~ #slider-carousel,
-body.woocommerce-page .header-overlapped ~ #slider-carousel { margin: -70px 0 70px; }
-body.page-template.page-template-template-business .header-overlapped ~ #slider-carousel, 
-body.blog .header-overlapped, 
-body.page-template.page-template-template-overlapped .header-overlapped ~ #slider-carousel { 
+--------------------------------------------------------------*/ 
+body.blog .header-overlapped { 
 	margin: 0px; 
 }
 body.page-template-template-business .header-overlapped, 
@@ -770,13 +842,13 @@ body.page-template-template-overlaped .header-overlapped {
 /* Navbar - Logo Right Align with Menu
 -------------------------------------------------------------------------*/
 
-@media (min-width: <?php echo $menu_breakpoint+1; ?>px) {
+@media (min-width: <?php echo $spicepress_menu_breakpoint+1; ?>px) {
 	.navbar-header.align-right {
 		float: right;
 	}
 	.navbar-header.align-right ~ .navbar-collapse { padding-left: 0; }
 }
-@media (max-width: <?php echo $menu_breakpoint; ?>px) {  
+@media (max-width: <?php echo $spicepress_menu_breakpoint; ?>px) {  
 	.navbar-header.align-right .navbar-toggle { 
 		float: left;
 		margin-left: 15px;
@@ -816,7 +888,7 @@ body.page-template-template-overlaped .header-overlapped {
 -------------------------------------------------------------------------*/
 
 .mobile-header-center { display: none; }
-@media (max-width: <?php echo $menu_breakpoint; ?>px){
+@media (max-width: <?php echo $spicepress_menu_breakpoint; ?>px){
 	.desktop-header-center {
 		display: none !important;
 	}
@@ -829,7 +901,7 @@ body.page-template-template-overlaped .header-overlapped {
 	padding-right: 0px;
 	width: auto;
 }
-@media (min-width: <?php echo $menu_breakpoint+1; ?>px) {
+@media (min-width: <?php echo $spicepress_menu_breakpoint+1; ?>px) {
 	.navbar-center-fullwidth .logo-area { 
 		margin: 0 auto;
 		padding: 40px 0;
@@ -853,7 +925,7 @@ body.page-template-template-overlaped .header-overlapped {
 .navbar-center-fullwidth .navbar-nav > .active > a, 
 .navbar-center-fullwidth .navbar-nav > .active > a:hover, 
 .navbar-center-fullwidth .navbar-nav > .active > a:focus {
-    color: #0060ff !important;
+    color: #ce1b28 !important;
     background-color: transparent !important;
 }
 .navbar-center-fullwidth .navbar-nav li > a {

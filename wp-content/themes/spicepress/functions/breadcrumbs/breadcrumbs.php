@@ -1,24 +1,24 @@
 <?php
 // theme sub header breadcrumb functions
-function curPageURL() {
-	$pageURL = 'http';
+function spicepress_curPageURL() {
+	$spicepress_page_url = 'http';
 	if ( key_exists("HTTPS", $_SERVER) && ( $_SERVER["HTTPS"] == "on" ) ){
-		$pageURL .= "s";
+		$spicepress_page_url .= "s";
 	}
-	$pageURL .= "://";
+	$spicepress_page_url .= "://";
 	if ($_SERVER["SERVER_PORT"] != "80") {
-		$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+		$spicepress_page_url .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
 	} else {
-		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+		$spicepress_page_url .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
  }
- return $pageURL;
+ return $spicepress_page_url;
 }
 
 if( !function_exists('spicepress_breadcrumbs') ):
 	function spicepress_breadcrumbs() { 
 			
 		global $post;
-		$homeLink = home_url();
+		$spicepress_homelink = home_url('/');;
 	?>
 		<!-- Page Title Section -->
 		<section class="page-title-section">		
@@ -49,67 +49,72 @@ if( !function_exists('spicepress_breadcrumbs') ):
 								echo '<ul class="page-breadcrumb wow bounceInRight animated" ata-wow-delay="0.4s">';
 								
 								 if (is_home() || is_front_page()) :
-								    echo '<li><a href="'.esc_url($homeLink).'">'.esc_html__('Home','spicepress').'</a></li>';
-									echo '<li class="active"><a href="'.esc_url($homeLink).'">'.esc_html(get_bloginfo( 'name' )).'</a></li>';
+								    echo '<li><a href="'.esc_url($spicepress_homelink).'">'.esc_html__('Home','spicepress').'</a></li>';
+									echo '<li class="active"><a href="'.esc_url($spicepress_homelink).'">'.esc_html(get_bloginfo( 'name' )).'</a></li>';
 								 else:
-									echo '<li><a href="'.esc_url($homeLink).'">'.esc_html__('Home','spicepress').'</a></li>';
+									echo '<li><a href="'.esc_url($spicepress_homelink).'">'.esc_html__('Home','spicepress').'</a></li>';
 									// Blog Category
 									if ( is_category() ) {
-										echo '<li class="active"><a href="'. curPageURL() .'">' . esc_html__('Archive by category','spicepress').' "' . single_cat_title('', false) . '"</a></li>';
+										echo '<li class="active"><a href="'. esc_url(spicepress_curPageURL()) .'">' . esc_html__('Archive by category','spicepress').' "' . single_cat_title('', false) . '"</a></li>';
 
 									// Blog Day
 									} elseif ( is_day() ) {
-										echo '<li class="active"><a href="'. get_year_link(get_the_time( esc_html__( 'Y', 'spicepress' ) )) . '">'. get_the_time( esc_html__( 'Y', 'spicepress' ) ) .'</a>';
-										echo '<li class="active"><a href="'. get_month_link(get_the_time( esc_html__( 'Y', 'spicepress' ) ),get_the_time( esc_html__( 'm', 'spicepress' ) )) .'">'. get_the_time( esc_html__( 'F', 'spicepress' ) ) .'</a>';
-										echo '<li class="active"><a href="'. curPageURL() .'">'. get_the_time( esc_html__( 'd', 'spicepress' ) ) .'</a></li>';
+										echo '<li class="active"><a href="'. esc_url(get_year_link(get_the_time( __( 'Y', 'spicepress' ) ))) . '">'. esc_html(get_the_time( __( 'Y', 'spicepress' ) )) .'</a>';
+										echo '<li class="active"><a href="'. esc_url(get_month_link( get_the_time( __( 'Y', 'spicepress' ) ), get_the_time( __( 'm', 'spicepress' ) )) ) .'">'. esc_html(get_the_time( __( 'F', 'spicepress' ) ) ) .'</a>';
+										echo '<li class="active"><a href="'. esc_url(spicepress_curPageURL()) .'">'. esc_html(get_the_time( __( 'd', 'spicepress' ) )) .'</a></li>';
 
 									// Blog Month
 									} elseif ( is_month() ) {
-										echo '<li class="active"><a href="' . get_year_link(get_the_time( esc_html__( 'Y', 'spicepress' ) )) . '">' . get_the_time( esc_html__( 'Y', 'spicepress' ) ) . '</a>';
-										echo '<li class="active"><a href="'. curPageURL() .'">'. get_the_time( esc_html__( 'F', 'spicepress' ) ) .'</a></li>';
+										echo '<li class="active"><a href="' . esc_url(get_year_link(get_the_time( __( 'Y', 'spicepress' ) ))) . '">' . esc_html(get_the_time( __( 'Y', 'spicepress' ) )) . '</a>';
+										echo '<li class="active"><a href="'. esc_url(spicepress_curPageURL()) .'">'. esc_html(get_the_time( __( 'F', 'spicepress' ) )) .'</a></li>';
 
 									// Blog Year
 									} elseif ( is_year() ) {
-										echo '<li class="active"><a href="'. curPageURL() .'">'. get_the_time( esc_html__( 'Y', 'spicepress' ) ) .'</a></li>';
+										echo '<li class="active"><a href="'. esc_url(spicepress_curPageURL()) .'">'. esc_html(get_the_time( __( 'Y', 'spicepress' ) )) .'</a></li>';
 
 									// Single Post
 									} elseif ( is_single() && !is_attachment() && is_page('single-product') ) {
 										
 										// Custom post type
 										if ( get_post_type() != 'post' ) {
-											$cat = get_the_category(); 
-											$cat = $cat[0];
+											$spicepress_cat = get_the_category(); 
+											$spicepress_cat = $spicepress_cat[0];
 											echo '<li>';
-												echo get_category_parents($cat, TRUE, '');
+												echo get_category_parents($spicepress_cat, TRUE, '');
 											echo '</li>';
-											echo '<li class="active"><a href="' . curPageURL() . '">'. wp_title( '',false ) .'</a></li>';
+											echo '<li class="active"><a href="' .esc_url(spicepress_curPageURL()) . '">'. wp_title( '',false ) .'</a></li>';
 										} }  
 										elseif ( is_page() && $post->post_parent ) {
-										$parent_id  = $post->post_parent;
-										$breadcrumbs = array();
-										while ($parent_id) {
-											$page = get_page($parent_id);
-											$breadcrumbs[] = '<li class="active"><a href="' . esc_url(get_permalink($page->ID)) . '">' . wp_kses( force_balance_tags(get_the_title($page->ID)), $allowed_html ) . '</a>';
-											$parent_id  = $page->post_parent;
-										}
-										$breadcrumbs = array_reverse($breadcrumbs);
-										foreach ($breadcrumbs as $crumb) echo $crumb;
-										
-										echo '<li class="active"><a href="' . curPageURL() . '">'. wp_kses( force_balance_tags(get_the_title()), $allowed_html ) .'</a></li>';
+										$post_array = get_post_ancestors($post);
+             						
+								            //Sorts in descending order by key, since the array is from top category to bottom.
+								            krsort($post_array);
+								            
+								            //Loop through every post id which we pass as an argument to the get_post() function.
+								            //$post_ids contains a lot of info about the post, but we only need the title.
+								            foreach($post_array as $key=>$postid){
+								                //returns the object $post_ids
+								                $post_ids = get_post($postid);
+								                //returns the name of the currently created objects
+								                $title = $post_ids->post_title;
+								                //Create the permalink of $post_ids
+								                echo '<li class="active"><a href="' . esc_url(get_permalink($post_ids)) . '">' . esc_html($title) . '</a></li>';
+								            }
+								            echo '<li class="active"><a href="'.esc_url(get_permalink()).'" >'.esc_html(get_the_title()).'</a></li>';
 
 									
 									}
 									elseif( is_search() )
 									{
-										echo '<li class="active"><a href="' . curPageURL() . '">'. get_search_query() .'</a></li>';
+										echo '<li class="active"><a href="' . esc_url(spicepress_curPageURL()) . '">'. get_search_query() .'</a></li>';
 									}
 									elseif( is_404() )
 									{
-										echo '<li class="active"><a href="' . curPageURL() . '">'.esc_html__('Error 404','spicepress').'</a></li>';
+										echo '<li class="active"><a href="' . esc_url(spicepress_curPageURL()) . '">'.esc_html__('Error 404','spicepress').'</a></li>';
 									}
 									else { 
 										// Default
-										echo '<li class="active"><a href="' . curPageURL() . '">'. wp_kses( force_balance_tags( get_the_title()), $allowed_html ) .'</a></li>';
+										echo '<li class="active"><a href="' . esc_url(spicepress_curPageURL()) . '">'. esc_html(get_the_title(), $allowed_html ) .'</a></li>';
 									}
 								endif;
 								

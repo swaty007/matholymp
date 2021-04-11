@@ -6,7 +6,7 @@ function spicepress_widgets_init() {
 	
 	register_sidebar( array(
 		'name' => esc_html__('Sidebar widget area','spicepress'),
-		'id' => 'sidebar_primary',
+		'id' => 'sidebar-1',
 		'description' => esc_html__('Sidebar widget area','spicepress'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s wow fadeInDown animated" data-wow-delay="0.4s">',
 		'after_widget' => '</aside>',
@@ -67,4 +67,3 @@ function spicepress_widgets_init() {
 		'after_title' => '</h3></div>',
 	));
 }	                     
-?>

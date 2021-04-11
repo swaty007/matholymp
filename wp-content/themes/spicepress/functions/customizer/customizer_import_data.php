@@ -1,12 +1,12 @@
 <?php
-class spicepress_customize_import_dummy_data {
+class Spicepress_customize_import_dummy_data {
 
 	private static $instance;
 
 	public static function init( ) {
-		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof spicepress_customize_import_dummy_data ) ) {
-			self::$instance = new spicepress_customize_import_dummy_data;
-			self::$instance->spicepress_setup_actions();
+		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Spicepress_customize_import_dummy_data ) ) {
+			self::$instance = new Spicepress_customize_import_dummy_data;
+			self::$instance->setup_actions();
 		}
 
 	}
@@ -19,16 +19,16 @@ class spicepress_customize_import_dummy_data {
 	/**
 	 * Setup the actions used for this class.
 	 */
-	public function spicepress_setup_actions() {
+	public function setup_actions() {
 
 		// Enqueue scripts
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'spicepress_import_customize_scripts' ), 0 );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'import_customize_scripts' ), 0 );
 
 	}
 	
 	
 
-	public function spicepress_import_customize_scripts() {
+	public function import_customize_scripts() {
 
 	wp_enqueue_script( 'spicepress-import-customizer-js', ST_TEMPLATE_DIR_URI . '/js/spicepress-import-customizer.js', array( 'customize-controls' ) );
 	}
@@ -41,4 +41,4 @@ $import_customizer = array(
 			
 		),
 );
-spicepress_customize_import_dummy_data::init( apply_filters( 'spicepress_import_customizer', $import_customizer ) );
+Spicepress_customize_import_dummy_data::init( apply_filters( 'spicepress_import_customizer', $import_customizer ) );

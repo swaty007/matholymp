@@ -4,6 +4,11 @@ define('ST_TEMPLATE_DIR_URI',get_template_directory_uri());
 define('ST_TEMPLATE_DIR',get_template_directory());
 define('ST_THEME_FUNCTIONS_PATH',ST_TEMPLATE_DIR.'/functions');
 
+/**
+* helder function
+*/
+require( ST_THEME_FUNCTIONS_PATH . '/custom-style/custom-css.php');
+
 
 // Theme functions file including
 require( ST_THEME_FUNCTIONS_PATH . '/scripts/script.php');
@@ -16,16 +21,18 @@ require( ST_THEME_FUNCTIONS_PATH . '/widgets/sidebars.php');
 
 // Adding customizer files
 require( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer_sections_settings.php' );
-require( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer_header_image.php');
 require( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer_general_settings.php');
 require( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
 require( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
 require( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer_bredcrumbs_settings.php');
 require( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
+require ( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_style.php' );
+require ( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer_color_back_settings.php' );
+require ( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer_typography.php' );
+require ( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer_blog_option_settings.php' );
 
 //Alpha Color Control
-require( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer-alpha-color-picker/class-spicepress-customize-alpha-color-control.php');
-
+require( ST_THEME_FUNCTIONS_PATH .'/customizer/customizer-alpha-color-picker/class-spicepress-customize-alpha-color-control.php');
 
 //About Theme
     $theme = wp_get_theme(); // gets the current theme
@@ -36,8 +43,6 @@ require( ST_THEME_FUNCTIONS_PATH . '/customizer/customizer-alpha-color-picker/cl
 		
 			}
 	}
-
-
 
 // set default content width
 if ( ! isset( $content_width ) ) {
@@ -53,10 +58,10 @@ if( !function_exists( 'spicepress_head_title' ) )
 				return $title;
 			
 		// Add the site name
-		$title .= get_bloginfo( 'name' );
+		$title .= esc_html(get_bloginfo( 'name' ));
 		
 		// Add the site description for the home / front page
-		$site_description = get_bloginfo( 'description' );
+		$site_description = esc_html(get_bloginfo( 'description' ));
 		if ( $site_description && ( is_home() || is_front_page() ) )
 				$title = "$title $sep $site_description";
 			
@@ -80,9 +85,6 @@ function spicepress_theme_setup() {
 	 */
 	
 	load_theme_textdomain( 'spicepress', ST_TEMPLATE_DIR . '/languages' );
-
-	
-	
 	
 	// Add default posts and comments RSS feed links to head.
 	
@@ -125,13 +127,6 @@ function spicepress_theme_setup() {
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
 	
-	
-	//Custom Header support
-	
-	add_theme_support( 'custom-header' );
-	
-	
-	
 	//Custom logo
 	
 	add_theme_support( 'custom-logo', array(
@@ -141,15 +136,14 @@ function spicepress_theme_setup() {
 		'header-text' => array( 'site-title', 'site-description' ),
 		
 	) );
+
+	add_editor_style();
 	
-	// Custom-header
-    add_theme_support( 'custom-header', apply_filters( 'spicepress_custom_header_args', array(
-                'default-text-color'     => '333',
-                'width'                  => 1600,
-                'height'                 => 200,
-                'flex-height'            => true,
-                'wp-head-callback'       => 'spicepress_header_style',
-            ) ) );
+	//Custom background
+	$args = array(
+	'default-image'  =>ST_TEMPLATE_DIR_URI. '/images/bg-img1.png',
+	);
+	add_theme_support( 'custom-background',$args);
 					
 	}
 endif; 
@@ -158,13 +152,13 @@ add_action( 'after_setup_theme', 'spicepress_theme_setup' );
 
 function spicepress_logo_class($html)
 {
-	$header_logo_placing = get_theme_mod('header_logo_placing', 'left');
+	$spicepress_header_logo_placing = get_theme_mod('header_logo_placing', 'left');
 	
-	if($header_logo_placing == 'left'){$logo_class = '';}
-	if($header_logo_placing == 'right'){$logo_class = 'align-right';}
-	if($header_logo_placing == 'center'){$logo_class = 'align-center';}
+	if($spicepress_header_logo_placing == 'left'){$spicepress_logo_class = '';}
+	if($spicepress_header_logo_placing == 'right'){$spicepress_logo_class = 'align-right';}
+	if($spicepress_header_logo_placing == 'center'){$spicepress_logo_class = 'align-center';}
 	
-	$html = str_replace('custom-logo-link', 'navbar-brand '.$logo_class.'', $html);
+	$html = str_replace('custom-logo-link', 'navbar-brand '.$spicepress_logo_class.'', $html);
 	return $html;
 }
 add_filter('get_custom_logo','spicepress_logo_class');
@@ -184,7 +178,6 @@ function spicepress_customizer_live_preview() {
 }
 
 add_action( 'customize_preview_init', 'spicepress_customizer_live_preview' );
-
 
 
 require_once ST_TEMPLATE_DIR . '/class-tgm-plugin-activation.php';
@@ -214,17 +207,22 @@ function spicepress_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-
-		
 		 // This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-            'name'      => 'Easy Instagram Feed',
-            'slug'      => 'easy-instagram-feed',
+            'name'      => esc_html__('Contact Form 7', 'spicepress'),
+            'slug'      => 'contact-form-7',
             'required'  => false,
         ),
-		
-		
-
+		array(
+            'name'      => esc_html__('Instagram Feed','spicepress'),
+            'slug' => 'instagram-feed',
+            'required'  => false,
+        ),
+        array(
+            'name'      => esc_html__('Spice Box','spicepress'),
+            'slug'      => 'spicebox',
+            'required'  => false,
+        ),
 	);
 
 	/*
@@ -245,85 +243,57 @@ function spicepress_register_required_plugins() {
 		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
 		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 		'message'      => '',                      // Message to output right before the plugins table.
-
-		/*
-		'strings'      => array(
-			'page_title'                      => __( 'Install Required Plugins', 'spicepress' ),
-			'menu_title'                      => __( 'Install Plugins', 'spicepress' ),
-			/* translators: %s: plugin name. * /
-			'installing'                      => __( 'Installing Plugin: %s', 'spicepress' ),
-			/* translators: %s: plugin name. * /
-			'updating'                        => __( 'Updating Plugin: %s', 'spicepress' ),
-			'oops'                            => __( 'Something went wrong with the plugin API.', 'spicepress' ),
-			'notice_can_install_required'     => _n_noop(
-				/* translators: 1: plugin name(s). * /
-				'This theme requires the following plugin: %1$s.',
-				'This theme requires the following plugins: %1$s.',
-				'spicepress'
-			),
-			'notice_can_install_recommended'  => _n_noop(
-				/* translators: 1: plugin name(s). * /
-				'This theme recommends the following plugin: %1$s.',
-				'This theme recommends the following plugins: %1$s.',
-				'spicepress'
-			),
-			'notice_ask_to_update'            => _n_noop(
-				/* translators: 1: plugin name(s). * /
-				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
-				'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
-				'spicepress'
-			),
-			'notice_ask_to_update_maybe'      => _n_noop(
-				/* translators: 1: plugin name(s). * /
-				'There is an update available for: %1$s.',
-				'There are updates available for the following plugins: %1$s.',
-				'spicepress'
-			),
-			'notice_can_activate_required'    => _n_noop(
-				/* translators: 1: plugin name(s). * /
-				'The following required plugin is currently inactive: %1$s.',
-				'The following required plugins are currently inactive: %1$s.',
-				'spicepress'
-			),
-			'notice_can_activate_recommended' => _n_noop(
-				/* translators: 1: plugin name(s). * /
-				'The following recommended plugin is currently inactive: %1$s.',
-				'The following recommended plugins are currently inactive: %1$s.',
-				'spicepress'
-			),
-			'install_link'                    => _n_noop(
-				'Begin installing plugin',
-				'Begin installing plugins',
-				'spicepress'
-			),
-			'update_link' 					  => _n_noop(
-				'Begin updating plugin',
-				'Begin updating plugins',
-				'spicepress'
-			),
-			'activate_link'                   => _n_noop(
-				'Begin activating plugin',
-				'Begin activating plugins',
-				'spicepress'
-			),
-			'return'                          => __( 'Return to Required Plugins Installer', 'spicepress' ),
-			'plugin_activated'                => __( 'Plugin activated successfully.', 'spicepress' ),
-			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'spicepress' ),
-			/* translators: 1: plugin name. * /
-			'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'spicepress' ),
-			/* translators: 1: plugin name. * /
-			'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'spicepress' ),
-			/* translators: 1: dashboard link. * /
-			'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'spicepress' ),
-			'dismiss'                         => __( 'Dismiss this notice', 'spicepress' ),
-			'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'spicepress' ),
-			'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'spicepress' ),
-
-			'nag_type'                        => '', // Determines admin notice type - can only be one of the typical WP notice classes, such as 'updated', 'update-nag', 'notice-warning', 'notice-info' or 'error'. Some of which may not work as expected in older WP versions.
-		),
-		*/
 	);
 
 	tgmpa( $plugins, $config );
 }
 
+if ( ! function_exists( 'wp_body_open' ) ) {
+
+	function wp_body_open() {
+		/**
+		 * Triggered after the opening <body> tag.
+		 */
+		do_action( 'wp_body_open' );
+	}
+}
+add_action( 'admin_enqueue_scripts','spicpress_theme_style');
+function spicpress_theme_style(){?> 
+	<style type="text/css">
+		#customize-control-theme_color input[type=radio], #customize-control-spicepress_layout_style input[type=radio], #customize-control-theme_style_type input[type=radio], #customize-control-predefined_back_image input[type=radio] {
+		    display: none !important;
+		}
+		#customize-control-header_logo_placing #input_header_logo_placing{
+			float: left;
+		}
+	</style>
+<?php } 
+
+//Set for old user before 1.3.7
+if (!get_option('spicepress_user_with_1_9_1', false)) {
+    //detect old user and set value
+    $spicepress_service_title=get_theme_mod('home_service_section_title');
+    $spicepress_service_discription=get_theme_mod('home_service_section_discription');
+    $spicepress_blog_title=get_theme_mod('home_news_section_title');
+    $spicepress_blog_discription=get_theme_mod('home_news_section_discription');
+    $spicepress_slider_title=get_theme_mod('home_slider_title');
+    $spicepress_slider_discription=get_theme_mod('home_slider_discription'); 
+    $spicepress_testimonial_title=get_theme_mod('home_testimonial_section_title'); 
+    $spicepress_testimonial__discription=get_theme_mod('home_testimonial_section_discription');
+    $spicepress_footer_credit=get_theme_mod('footer_copyright_text');
+
+    if ($spicepress_service_title !=null || $spicepress_service_discription !=null || $spicepress_blog_title !=null || $spicepress_blog_discription !=null || $spicepress_slider_title !=null || $spicepress_slider_discription !=null || $spicepress_testimonial_title !=null || $spicepress_testimonial__discription !=null || $spicepress_footer_credit !=null )  {
+        add_option('spicepress_user_with_1_9_1', 'old');
+
+    } else {
+        add_option('spicepress_user_with_1_9_1', 'new');
+    }
+}
+
+//Remove Footer section
+function spicepress_remove_customize_register( $wp_customize ) {
+
+   $wp_customize->remove_section( 'spicepress_footer_copyright');
+
+}
+add_action( 'customize_register', 'spicepress_remove_customize_register',11);

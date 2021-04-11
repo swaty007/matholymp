@@ -51,6 +51,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 	<?php wp_head(); ?>
 </head>
+<?php
+$layout_selector=get_theme_mod('spicepress_layout_style','wide');
+if($layout_selector == "boxed")
+{ $class="boxed"; }
+else
+{ $class="wide"; }
+?>
 <body <?php body_class( ); ?> >
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LNHVFV"
@@ -90,4 +97,7 @@ setTimeout(function() {document.getElementById('pre-loader').style.display = 'no
 
 
 <div id="wrapper">
-<?php get_template_part('header/header-navbar'); ?>
+    <?php wp_body_open(); ?>
+    <div id="page" class="site">
+        <a class="skip-link spicepress-screen-reader" href="#content"><?php esc_html_e( 'Skip to content', 'spicepress' ); ?></a>
+    <?php get_template_part('header/header-navbar'); ?>

@@ -27,14 +27,14 @@ class Spicepress_Header_Logo_Customize_Control_Radio_Image extends WP_Customize_
 		<?php endif; ?>
 
 		<?php if ( ! empty( $this->description ) ) : ?>
-			<span class="description customize-control-description"><?php echo $this->description; ?></span>
+			<span class="description customize-control-description"><?php echo esc_html($this->description); ?></span>
 		<?php endif; ?>
 
 		<div id="<?php echo esc_attr( "input_{$this->id}" ); ?>">
 
 			<?php foreach ( $this->choices as $value => $args ) : ?>
 
-				<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( "_customize-radio-{$this->id}" ); ?>" id="<?php echo esc_attr( "{$this->id}-{$value}" ); ?>" <?php $this->link(); ?> <?php checked( $this->value(), $value ); ?> />
+				<input type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( "_customize-radio-{$this->id}" ); ?>" id="<?php echo esc_attr( "{$this->id}-{$value}" ); ?>" <?php esc_attr($this->link()); ?> <?php checked( $this->value(), $value ); ?> />
 
 				<label for="<?php echo esc_attr( "{$this->id}-{$value}" ); ?>">
 					<?php if ( ! empty( $args['label'] ) ) { ?>
@@ -208,8 +208,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		$wp_customize->add_control( 'menu_breakpoint', array(
 		  'type' => 'number',
 		  'section' => 'spicepress_menu_breakpoint', // Add a default or your own section
-		  'label' => __( 'Menu breakpoint', 'spicepress' ),
-		  'description' => __( 'Enter the Min. Size 200px and Max Size 6000px', 'spicepress' ),
+		  'label' => esc_html__( 'Menu breakpoint', 'spicepress' ),
+		  'description' => esc_html__( 'Enter the Min. Size 200px and Max Size 6000px', 'spicepress' ),
 		) );
 
 		function spicepress_sanitize_number_absint( $number, $setting ) {
@@ -217,7 +217,8 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		  $number = absint( $number );
 		  
 		  if($number < 200 || $number > 6000){
-			  
+		  	return;
+			
 		  }else{
 			  
 			   // If the input is an absolute integer, return it; otherwise, return the default
@@ -240,7 +241,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			$wp_customize->add_setting( 'remove_wow_desktop_animation',array(
 			'capability'     => 'edit_theme_options',
 			'default' => false,
-			'sanitize_callback' => 'spicepress_home_page_sanitize_text',
+			'sanitize_callback' => 'spicepress_sanitize_checkbox',
 			));	
 			$wp_customize->add_control( 'remove_wow_desktop_animation',array(
 			'label'   => esc_html__('Disable animation effect in desktop','spicepress'),
@@ -252,7 +253,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			$wp_customize->add_setting( 'remove_wow_mobile_animation',array(
 			'capability'     => 'edit_theme_options',
 			'default' => false,
-			'sanitize_callback' => 'spicepress_home_page_sanitize_text',
+			'sanitize_callback' => 'spicepress_sanitize_checkbox',
 			));	
 			$wp_customize->add_control( 'remove_wow_mobile_animation',array(
 			'label'   => esc_html__('Disable animation effect on mobile devices','spicepress'),
@@ -260,71 +261,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			'type' => 'checkbox',
 			));
 			
-
-	/* footer copyright section */
-	$wp_customize->add_section( 'spicepress_footer_copyright' , array(
-		'title'      => esc_html__('Footer copyright settings','spicepress'),
-		'panel'  => 'general_settings',
-   	) );
-	
-	
-	$wp_customize->add_setting(
-		'footer_copyright_text',
-		array(
-			'default'           =>  '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://spicethemes.com" rel="designer">SpicePress</a> by SpiceThemes', 'spicepress' ).'</p>',
-			'capability'        =>  'edit_theme_options',
-			'sanitize_callback' =>  'spicepress_copyright_sanitize_text',
-			'transport'         => $selective_refresh,
-		)	
-	);
-	$wp_customize->add_control('footer_copyright_text', array(
-			'label' => esc_html__('Copyright text','spicepress'),
-			'section' => 'spicepress_footer_copyright',
-			'type'    =>  'textarea'
-	));	 // footer copyright
-	
-	
-	/* footer copyright section */
-	$wp_customize->add_section( 'spicepress_pro_general' , array(
-		'title'      => esc_html__('More Options','spicepress'),
-		'panel'  => 'general_settings',
-   	) );
-	
-	    //Pro general settings	
-		class WP_general_pro_Customize_Control extends WP_Customize_Control {
-		public $type = 'new_menu';
-		/**
-		* Render the control's content.
-		*/
-		public function render_content() {
-		?>
-		 <div class="pro-vesrion">
-		 <P><?php esc_html_e('More options available for Header in SpicePress Pro','spicepress');?></P>
-		 </div>
-		  <div class="pro-box">
-		 <a href="<?php echo esc_url('https://helpdoc.spicethemes.com/spicepress/how-to-configure-header-variation/');?>" class="read-more-button" id="review_pro" target="_blank"><?php esc_html_e( 'Read More','spicepress' ); ?></a>
-		 <div>
-		<?php
-		}
-	    }
-
-		$wp_customize->add_setting(
-			'add_pro_general',
-			array(
-				'capability'     => 'edit_theme_options',
-				'sanitize_callback' => 'sanitize_text_field',
-			)	
-		);
-		$wp_customize->add_control( new WP_general_pro_Customize_Control( $wp_customize, 'add_pro_general', array(	
-				'section' => 'spicepress_pro_general',
-				'setting' => 'add_pro_general',
-		
-		)));
-	
-	function spicepress_copyright_sanitize_text( $input ) 
-	{
-		return wp_kses_post( force_balance_tags( $input ) );
-	}
 }
 add_action( 'customize_register', 'spicepress_general_settings_customizer' );
 

@@ -11,14 +11,11 @@ endif;
 // Spicepress comment part
 if( !function_exists('spicepress_comments') ):
 function spicepress_comments( $comment, $args, $depth ){
-	
-	$GLOBALS['comment'] = $comment;
-	
 	//get theme data
 	global $comment_data;
 	
 	//translations
-	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : __('Reply','spicepress');
+	$leave_reply = isset($comment_data['translation_reply_to_coment']) ? $comment_data['translation_reply_to_coment'] : __('Reply','spicepress');
 ?>
 <!--Comment-->
 <div <?php comment_class('media comment-box'); ?> id="comment-<?php comment_ID(); ?>">
@@ -72,7 +69,7 @@ endif;
 
 
 <?php if ('open' == $post->comment_status) :
-	if ( get_option('comment_registration') && !$user_ID ): ?>
+	if ( get_option('comment_registration') && isset($user_ID )): ?>
 		<p><?php echo sprintf( wp_kses( 'You must be <a href="%s">logged in</a> to post a comment','spicepress' ), esc_url(site_url( 'wp-login.php' )) . '?redirect_to=' .  urlencode(esc_url(get_permalink()))); ?></p>
 		<?php else:
 	

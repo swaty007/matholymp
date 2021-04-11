@@ -79,20 +79,20 @@ class Spicepress_Customizer_Notify {
 	public function setup_actions() {
 
 		// Register the section
-		add_action( 'customize_register', array( $this, 'spicepress_plugin_notification_customize_register' ) );
+		add_action( 'customize_register', array( $this, 'plugin_notification_customize_register' ) );
 
 		// Enqueue scripts and styles
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'spicepress_customizer_notify_scripts_for_customizer' ), 0 );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customizer_notify_scripts_for_customizer' ), 0 );
 
 		/* ajax callback for dismissable recommended actions */
-		add_action( 'wp_ajax_quality_customizer_notify_dismiss_action', array( $this, 'spicepress_customizer_notify_dismiss_recommended_action_callback' ) );
+		add_action( 'wp_ajax_quality_customizer_notify_dismiss_action', array( $this, 'customizer_notify_dismiss_recommended_action_callback' ) );
 
-		add_action( 'wp_ajax_ti_customizer_notify_dismiss_recommended_plugins', array( $this, 'spicepress_customizer_notify_dismiss_recommended_plugins_callback' ) );
+		add_action( 'wp_ajax_ti_customizer_notify_dismiss_recommended_plugins', array( $this, 'customizer_notify_dismiss_recommended_plugins_callback' ) );
 
 	}
 
 	
-	public function spicepress_customizer_notify_scripts_for_customizer() {
+	public function customizer_notify_scripts_for_customizer() {
 
 		wp_enqueue_style( 'spicepress-customizer-notify-css', ST_TEMPLATE_DIR_URI . '/functions/customizer-notify/css/spicepress-customizer-notify.css', array());
                 wp_style_add_data( 'spicepress-customizer-notify-css', 'rtl', 'replace' );
@@ -115,7 +115,7 @@ class Spicepress_Customizer_Notify {
 	}
 
 	
-	public function spicepress_plugin_notification_customize_register( $wp_customize ) {
+	public function plugin_notification_customize_register( $wp_customize ) {
 
 		
 		require_once ST_TEMPLATE_DIR . '/functions/customizer-notify/spicepress-customizer-notify-section.php';
@@ -138,13 +138,11 @@ class Spicepress_Customizer_Notify {
 	}
 
 	
-	public function spicepress_customizer_notify_dismiss_recommended_action_callback() {
+	public function customizer_notify_dismiss_recommended_action_callback() {
 
 		global $spicepress_customizer_notify_recommended_actions;
 
 		$action_id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : 0;
-
-		echo $action_id; 
 
 		if ( ! empty( $action_id ) ) {
 
@@ -181,11 +179,9 @@ class Spicepress_Customizer_Notify {
 	}
 
 	
-	public function spicepress_customizer_notify_dismiss_recommended_plugins_callback() {
+	public function customizer_notify_dismiss_recommended_plugins_callback() {
 
 		$action_id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : 0;
-
-		echo $action_id; 
 
 		if ( ! empty( $action_id ) ) {
 

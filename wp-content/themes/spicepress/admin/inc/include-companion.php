@@ -5,8 +5,8 @@
  *
  */
 
-$hide_install = get_option('spicepress_hide_customizer_companion_notice', false);
-if (!function_exists('spicethemes_companion') && !$hide_install) {
+$spicepress_hide_install = get_option('spicepress_hide_customizer_companion_notice', false);
+if (!function_exists('spicethemes_companion') && !$spicepress_hide_install) {
 	if (class_exists('WP_Customize_Section') && !class_exists('Spicepress_Companion_Installer_Section')) {
 		/**
 		 *
@@ -35,13 +35,13 @@ if (!function_exists('spicethemes_companion') && !$hide_install) {
 			public static function enqueue() {
 				wp_enqueue_script('plugin-install');
 				wp_enqueue_script('updates');
-				wp_enqueue_script('spicepress-companion-install', ST_TEMPLATE_DIR_URI . '/assets/js/plugin-install.js', array('jquery'));
+				wp_enqueue_script('spicepress-companion-install', ST_TEMPLATE_DIR_URI . '/admin/assets/js/plugin-install.js', array('jquery'));
 				wp_localize_script('spicepress-companion-install', 'spicepress_companion_install',
 					array(
 						'installing' => esc_html__('Installing', 'spicepress'),
 						'activating' => esc_html__('Activating', 'spicepress'),
 						'error'      => esc_html__('Error', 'spicepress'),
-						'ajax_url'   => esc_url_raw(admin_url('admin-ajax.php')),
+						'ajax_url'   => esc_url(admin_url('admin-ajax.php')),
 					)
 				);
 			}
@@ -77,7 +77,7 @@ if (!function_exists('spicethemes_companion') && !$hide_install) {
 						$plugin_install_url = wp_nonce_url($plugin_install_url, 'install-plugin_spicethemes-companion');
 					 ?>
 						<p><?php esc_html_e("To take advantage of this theme's features in the customizer you need to install the SpiceBox plugin.", "spicepress");?></p>
-						<a class="spicethemes-plugin-install install-now button-secondary button" data-slug="spicebox" href="<?php echo esc_url_raw($plugin_install_url); ?>" aria-label="<?php esc_attr_e('Install SpiceBox Now', 'spicepress');?>" data-name="<?php esc_attr_e('SpiceBox', 'spicepress'); ?>">
+						<a class="spicethemes-plugin-install install-now button-secondary button" data-slug="spicebox" href="<?php echo esc_url($plugin_install_url); ?>" aria-label="<?php esc_attr_e('Install SpiceBox Now', 'spicepress');?>" data-name="<?php esc_attr_e('SpiceBox', 'spicepress'); ?>">
 							<?php esc_html_e('Install and activate', 'spicepress');?>
 						</a>
 					<?php else: ?>
@@ -94,7 +94,7 @@ if (!function_exists('spicethemes_companion') && !$hide_install) {
 							);
 						?>
 						<p><?php esc_html_e("You have installed the SpiceBox plugin. To take advantage of this theme's features in the customizer, you need to activate it.", "spicepress");?></p>
-						<a class="spicethemes-plugin-activate activate-now button-primary button" data-slug="spicebox" href="<?php echo esc_url_raw($plugin_activate_link); ?>" aria-label="<?php esc_attr_e('Activate SpiceBox now', 'spicepress');?>" data-name="<?php esc_attr_e('SpiceBox', 'spicepress'); ?>">
+						<a class="spicethemes-plugin-activate activate-now button-primary button" data-slug="spicebox" href="<?php echo esc_url($plugin_activate_link); ?>" aria-label="<?php esc_attr_e('Activate SpiceBox now', 'spicepress');?>" data-name="<?php esc_attr_e('SpiceBox', 'spicepress'); ?>">
 							<?php esc_html_e('Activate now', 'spicepress');?>
 						</a>
 					<?php endif;?>

@@ -1,5 +1,5 @@
 <?php
-if(is_admin()){
+if ( is_admin() ){
 	require ST_TEMPLATE_DIR . '/admin/inc/class-spicethemes-about-page.php';
 }
 

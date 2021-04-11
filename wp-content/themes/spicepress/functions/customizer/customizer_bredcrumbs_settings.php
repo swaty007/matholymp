@@ -117,4 +117,3 @@ function spicepress_template_page_sanitize_text( $input ) {
 			return wp_kses_post( force_balance_tags( $input ) );
 
 			}
-?>
